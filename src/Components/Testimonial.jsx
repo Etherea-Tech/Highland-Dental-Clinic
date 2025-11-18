@@ -60,11 +60,11 @@ const Testimonials = () => {
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-poppins">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-poppins ">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
-              className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:cursor-pointer"
             >
               {/* Quote Icon */}
               <div className="mb-4 flex items-center gap-3">
@@ -87,7 +87,7 @@ const Testimonials = () => {
           ))}
         </div>
         <div className="flex justify-center items-center mt-8">
-          <button className="font-poppins text-md font-normal text-lightbg bg-mydark px-3 py-2 rounded-3xl hover:cursor-pointer hover:bg-mydark/80">
+          <button className="font-poppins text-md font-normal text-lightbg bg-mydark px-3 py-2 rounded-3xl hover:cursor-pointer hover:bg-mydark/90 transition-all duration-500 ease-out hover:-translate-y-1">
             View More
           </button>
         </div>

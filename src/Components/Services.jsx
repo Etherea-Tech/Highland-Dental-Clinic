@@ -1,68 +1,16 @@
 import React from "react";
-import {
-  Shield,
-  Zap,
-  Scissors,
-  Crown,
-  Moon,
-  Brush,
-  Stethoscope,
-  Sparkles,
-} from "lucide-react";
+
+import Generaldentistry from "../assets/icons/general_dentistry.png";
+import Dentalexam from "../assets/icons/dental_exam.png";
 
 const Services = () => {
   const services = [
     {
       id: 1,
-      title: "Dental Exam and Cleaning",
+      title: "General Dentistry",
       description:
-        "Our cleanings will help you avoid plaque and tartar build-up on your teeth, which could lead to gum disease, tooth loss and other complications!",
-      icon: <Stethoscope className="w-8 h-8" />,
-      features: [
-        "Professional cleaning",
-        "Comprehensive examination",
-        "Plaque removal",
-        "Preventive care",
-      ],
-    },
-    {
-      id: 2,
-      title: "Tooth Colored Restoration",
-      description:
-        "Natural-looking fillings that blend seamlessly with your teeth while providing durable protection against decay.",
-      icon: <Brush className="w-8 h-8" />,
-      features: [
-        "Aesthetic composite",
-        "Bonding technology",
-        "Color matching",
-        "Minimal invasion",
-      ],
-    },
-    {
-      id: 3,
-      title: "Root Canals",
-      description:
-        "Pain-free root canal treatments to save infected teeth and relieve discomfort while preserving your natural smile.",
-      icon: <Zap className="w-8 h-8" />,
-      features: [
-        "Pain management",
-        "Advanced equipment",
-        "Single visit options",
-        "High success rate",
-      ],
-    },
-    {
-      id: 4,
-      title: "Extractions",
-      description:
-        "Gentle tooth extraction procedures performed with care and precision to maintain your oral health.",
-      icon: <Scissors className="w-8 h-8" />,
-      features: [
-        "Minimal discomfort",
-        "Quick recovery",
-        "Wisdom teeth",
-        "Surgical extractions",
-      ],
+        "Our cleanings will help you avoid plaque and tartar build up on your teeth, which could lead to gum disease, tooth loss and other complications!",
+      icon: Generaldentistry,
     },
   ];
 
@@ -70,54 +18,55 @@ const Services = () => {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            General Dentistry
+        <div className="mb-12">
+          <h2 className="text-mydark font-poppins text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold">
+            Our Services
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Our cleanings will help you avoid plaque and tartar build-up on your
-            teeth, which could lead to gum disease, tooth loss and other
-            complications!
+
+          {/* Intro paragraph */}
+          <p className="font-poppins w-full md:w-4/5 lg:w-2/3 xl:w-1/2 mt-4 md:mt-6 text-darkblack text-sm sm:text-base md:text-lg leading-relaxed text-myblack">
+            At{" "}
+            <span className="text-mydark font-semibold text-base sm:text-lg md:text-xl">
+              Highland Dental Clinics
+            </span>
+            , are equipped with the latest dental technology to provide optimum
+            care for comfort and peace of mind.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-poppins">
           {services.map((service) => (
             <div
               key={service.id}
-              className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 hover:translate-y-[-4px] group"
+              className="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 hover:cursor-pointer"
             >
-              {/* Service Icon */}
-              <div className="mb-4 flex items-center justify-center w-12 h-12 bg-blue-100 rounded-lg group-hover:bg-blue-200 transition-colors">
-                <div className="text-blue-600">{service.icon}</div>
+              {/* Service Header */}
+              <div className="flex gap-3 items-center">
+                <div className="bg-white w-14 h-14 p-2 rounded-full flex justify-center items-center shadow-sm">
+                  <img
+                    className="w-8 h-8"
+                    src={service.icon}
+                    alt={service.title}
+                  />
+                </div>
+                <div>
+                  <h4 className="font-medium text-2xl text-myblack">
+                    {service.title}
+                  </h4>
+                </div>
               </div>
 
-              {/* Service Title */}
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                {service.title}
-              </h3>
-
-              {/* Service Description */}
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+              <p className="text-myblack my-6 leading-relaxed">
                 {service.description}
               </p>
-
-              {/* Service Features */}
-              <ul className="space-y-2">
-                {service.features.map((feature, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center text-xs text-gray-500"
-                  >
-                    <span className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
+              <button className="font-poppins text-md font-normal text-lightbg bg-mydark px-3 py-2 rounded-3xl hover:cursor-pointer hover:bg-mydark/90 transition-all duration-500 ease-out hover:-translate-y-1">
+                View More
+              </button>
             </div>
           ))}
         </div>
+
+        <div className="flex justify-center items-center mt-8"></div>
       </div>
     </section>
   );
