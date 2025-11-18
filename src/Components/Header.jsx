@@ -53,16 +53,15 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-gray-900">
+      <header className="bg-lightbg  border-b border-lightblue font-poppins">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
           {/* Logo */}
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
               <img
-                src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                alt="Company Logo"
-                className="h-8 w-auto"
+                src="https://highlandhillsdentalcentre.com/logo.png"
+                alt="Highland Dental Hills Logo"
+                className="h-12 w-auto"
               />
             </a>
           </div>
@@ -72,7 +71,7 @@ const Header = () => {
             <button
               type="button"
               onClick={toggleMobileMenu}
-              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
+              className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-mydark"
             >
               <span className="sr-only">Open main menu</span>
               <Menu className="size-6" />
@@ -88,7 +87,7 @@ const Header = () => {
                     <button
                       onClick={() => toggleDropdown(item.name)}
                       onMouseEnter={() => setOpenDropdown(item.name)}
-                      className="flex items-center gap-x-1 text-sm font-semibold text-white hover:text-gray-300"
+                      className="flex items-center gap-x-1 text-sm font-semibold text-mydark hover:text-gray-300"
                     >
                       {item.name}
                       <ChevronDown
@@ -101,7 +100,7 @@ const Header = () => {
                     {/* Dropdown Menu */}
                     {openDropdown === item.name && (
                       <div
-                        className="absolute left-0 mt-3 w-screen max-w-md rounded-3xl bg-gray-800 shadow-lg ring-1 ring-white/10"
+                        className="absolute left-0 mt-3 w-screen max-w-md z-30 rounded-3xl bg-lightbg shadow-lg ring-1 ring-white/10"
                         onMouseLeave={() => setOpenDropdown(null)}
                       >
                         <div className="p-4">
@@ -116,7 +115,7 @@ const Header = () => {
                               <div className="flex-auto">
                                 <a
                                   href="#"
-                                  className="block font-semibold text-white"
+                                  className="block font-semibold text-mydark"
                                 >
                                   {dropdownItem.name}
                                   <span className="absolute inset-0" />
@@ -128,29 +127,13 @@ const Header = () => {
                             </div>
                           ))}
                         </div>
-                        <div className="grid grid-cols-2 divide-x divide-white/10 bg-gray-700/50 rounded-b-3xl">
-                          <a
-                            href="#"
-                            className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold text-white hover:bg-gray-700/50"
-                          >
-                            <Play className="size-5" />
-                            Watch demo
-                          </a>
-                          <a
-                            href="#"
-                            className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold text-white hover:bg-gray-700/50"
-                          >
-                            <Phone className="size-5" />
-                            Contact sales
-                          </a>
-                        </div>
                       </div>
                     )}
                   </>
                 ) : (
                   <a
                     href={item.href}
-                    className="text-sm font-semibold text-white hover:text-gray-300"
+                    className="text-sm font-semibold text-mydark hover:text-gray-300"
                   >
                     {item.name}
                   </a>
@@ -163,7 +146,7 @@ const Header = () => {
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
             <a
               href="#"
-              className="flex items-center gap-x-1 text-sm font-semibold text-white hover:text-gray-300"
+              className="flex items-center gap-x-1 text-sm font-semibold text-mydark hover:text-gray-300"
             >
               Log in <LogIn className="size-4" />
             </a>
@@ -174,14 +157,14 @@ const Header = () => {
         {isMobileMenuOpen && (
           <div className="lg:hidden">
             <div className="fixed inset-0 z-50" />
-            <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+            <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-lightbg px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
               <div className="flex items-center justify-between">
                 <a href="#" className="-m-1.5 p-1.5">
                   <span className="sr-only">Your Company</span>
                   <img
-                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                    alt="Company Logo"
-                    className="h-8 w-auto"
+                    src="https://highlandhillsdentalcentre.com/logo.png"
+                    alt="Highland Dental Hills Logo"
+                    className="h-12 w-auto"
                   />
                 </a>
                 <button
@@ -202,7 +185,7 @@ const Header = () => {
                           <div className="-mx-3">
                             <button
                               onClick={() => toggleDropdown(item.name)}
-                              className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold text-white hover:bg-white/5"
+                              className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold text-mydark hover:bg-white/5"
                             >
                               {item.name}
                               <ChevronDown
@@ -218,36 +201,20 @@ const Header = () => {
                                     <a
                                       key={dropdownIndex}
                                       href="#"
-                                      className="block rounded-lg py-2 text-sm font-semibold text-white hover:bg-white/5"
+                                      className="block rounded-lg py-2 text-sm font-semibold text-mydark hover:bg-white/5"
                                       onClick={toggleMobileMenu}
                                     >
                                       {dropdownItem.name}
                                     </a>
                                   )
                                 )}
-                                <a
-                                  href="#"
-                                  className="flex items-center gap-x-2 rounded-lg py-2 text-sm font-semibold text-white hover:bg-white/5"
-                                  onClick={toggleMobileMenu}
-                                >
-                                  <Play className="size-4" />
-                                  Watch demo
-                                </a>
-                                <a
-                                  href="#"
-                                  className="flex items-center gap-x-2 rounded-lg py-2 text-sm font-semibold text-white hover:bg-white/5"
-                                  onClick={toggleMobileMenu}
-                                >
-                                  <Phone className="size-4" />
-                                  Contact sales
-                                </a>
                               </div>
                             )}
                           </div>
                         ) : (
                           <a
                             href={item.href}
-                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-white hover:bg-white/5"
+                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-mydark hover:bg-white/5"
                             onClick={toggleMobileMenu}
                           >
                             {item.name}
@@ -259,7 +226,7 @@ const Header = () => {
                   <div className="py-6">
                     <a
                       href="#"
-                      className="flex items-center gap-x-2 -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-white hover:bg-white/5"
+                      className="flex items-center gap-x-2 -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold text-mydark hover:bg-white/5"
                       onClick={toggleMobileMenu}
                     >
                       <LogIn className="size-4" />

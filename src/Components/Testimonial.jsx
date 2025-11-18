@@ -1,5 +1,5 @@
 import { FcGoogle } from "react-icons/fc";
-
+import { FaQuoteLeft } from "react-icons/fa";
 const Testimonials = () => {
   const testimonials = [
     {
@@ -44,15 +44,23 @@ const Testimonials = () => {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            TESTIMONIALS
+        <div className=" mb-12">
+          <h2 className="text-mydark font-poppins text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold">
+            Trusted Clients
           </h2>
-          <p className="text-lg text-gray-600">Our trusted clients</p>
+
+          {/* Intro paragraph */}
+          <p className="font-poppins w-full md:w-4/5 lg:w-2/3 xl:w-1/2 mt-4 md:mt-6 text-darkblack text-sm sm:text-base md:text-lg leading-relaxed text-myblack">
+            At{" "}
+            <span className="text-mydark font-semibold text-base sm:text-lg md:text-xl">
+              Highland Dental Clinics
+            </span>
+            , we specialize in providing high quality dental services
+          </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 font-poppins">
           {testimonials.map((testimonial) => (
             <div
               key={testimonial.id}
@@ -60,22 +68,28 @@ const Testimonials = () => {
             >
               {/* Quote Icon */}
               <div className="mb-4 flex items-center gap-3">
-                <FcGoogle className="text-2xl" />
+                <FaQuoteLeft className="text-mydark w-6 h-6" />
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-gray-700 mb-6 leading-relaxed">
+              <p className="text-myblack mb-6 leading-relaxed">
                 {testimonial.text}
               </p>
 
               {/* Client Info */}
-              <div className="border-t pt-4">
-                <h4 className="font-semibold text-gray-900">
-                  {testimonial.name}
-                </h4>
+              <div className="border-t border-mydark/20 pt-4 flex items-center gap-2">
+                <div>
+                  <FcGoogle className="w-6 h-6" />
+                </div>
+                <h4 className="font-medium text-mydark">{testimonial.name}</h4>
               </div>
             </div>
           ))}
+        </div>
+        <div className="flex justify-center items-center mt-8">
+          <button className="font-poppins text-md font-normal text-lightbg bg-mydark px-3 py-2 rounded-3xl hover:cursor-pointer hover:bg-mydark/80">
+            View More
+          </button>
         </div>
       </div>
     </section>

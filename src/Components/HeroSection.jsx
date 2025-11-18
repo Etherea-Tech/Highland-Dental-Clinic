@@ -1,53 +1,138 @@
 import React from "react";
-import { Play } from "lucide-react";
+import { Calendar, Star, Award, Users } from "lucide-react";
+import { FcGoogle } from "react-icons/fc";
 
 export default function HeroSection() {
   return (
-    <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Subtle grid background */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_6rem]"></div>
+    <div className="min-h-4/5 mb-8 bg-lightbg font-poppins">
+      {/* Hero Section */}
+      <div className="container mx-auto px-6 py-12">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Column - Content */}
+          <div className="space-y-8">
+            {/* Patient Testimonial Card */}
+            <div className="flex items-center gap-4 animate-fade-in">
+              <div className="flex items-center gap-4  rounded-full px-4 py-2 shadow-lg border border-mydark">
+                <FcGoogle className="text-2xl" />
 
-      {/* Hero Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="space-y-8 max-w-2xl">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight">
-              Customer service software for customer-first teams
-            </h1>
+                <div className="flex gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star
+                      key={i}
+                      className="w-4 h-4 fill-yellow-400 text-yellow-400 drop-shadow-lg"
+                    />
+                  ))}
+                </div>
+              </div>
+            </div>
 
-            <p className="text-lg sm:text-xl text-gray-600 leading-relaxed">
-              The best customer service software for customer-first teams.
-              Industry-leading email and live chat support.
+            {/* Main Heading */}
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold text-slate-800 leading-tight">
+                Your One Stop Shop
+                <br />
+                <span className="text-slate-700">
+                  for all your dental needs
+                </span>
+              </h1>
+            </div>
+
+            {/* Description */}
+            <p className="text-slate-600 text-lg leading-relaxed max-w-md">
+              Every dental care experience, that you feel comfortable with our
+              dentist professionals and than you look awesome.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-700 bg-white hover:bg-gray-50 border-2 border-gray-300 rounded-lg transition-colors duration-200 group">
-                <Play className="mr-2 w-5 h-5 fill-current" />
-                Demo
-              </button>
-
-              <button className="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-purple-600 hover:bg-purple-700 rounded-lg transition-colors duration-200 shadow-lg shadow-purple-600/30">
-                Sign up
-              </button>
-            </div>
+            {/* CTA Button */}
+            <button className="bg-mydark text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
+              BOOK NOW
+            </button>
           </div>
 
-          {/* Right Image */}
-          <div className="relative lg:ml-auto">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
+          {/* Right Column - Image & Credentials */}
+          <div className="relative">
+            {/* Main Dentist Image */}
+            <div className="relative z-10">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-200 rounded-full blur-3xl opacity-40"></div>
               <img
-                src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1000&q=80"
-                alt="Minimal workspace with laptop"
-                className="w-full h-auto object-cover"
+                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=700&fit=crop"
+                alt="Professional dentist"
+                className="relative z-10 w-full max-w-md mx-auto rounded-3xl shadow-2xl"
               />
             </div>
 
-            {/* Decorative blur effect behind image */}
-            <div className="absolute -inset-8 bg-gradient-to-br from-purple-200/40 via-pink-200/40 to-blue-200/40 rounded-3xl blur-3xl -z-10 opacity-60"></div>
+            {/* Floating Credentials Card */}
+            <div className="absolute top-8 right-0 bg-white rounded-2xl shadow-xl p-6 max-w-xs z-20 animate-float">
+              <h3 className="text-sm font-semibold text-slate-700 mb-3">
+                Authorized licenses
+                <br />
+                from reputed dental
+                <br />
+                college
+              </h3>
+              <div className="flex gap-3 flex-wrap items-center">
+                <div className="flex items-center gap-1">
+                  <Award className="w-4 h-4" />
+                  <span className="text-xs">ADA</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Award className="w-4 h-4" />
+                  <span className="text-xs">ISO</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Star className="w-4 h-4" />
+                  <span className="text-xs">Certified</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Users className="w-4 h-4" />
+                  <span className="text-xs">Member</span>
+                </div>
+              </div>
+              <p className="text-xs text-slate-500 mt-3">2021-2025</p>
+            </div>
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+        @keyframes float-delay {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-15px);
+          }
+        }
+        .animate-float {
+          animation: float 3s ease-in-out infinite;
+        }
+        .animate-float-delay {
+          animation: float-delay 3s ease-in-out infinite 1s;
+        }
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fade-in 0.6s ease-out;
+        }
+      `}</style>
     </div>
   );
 }

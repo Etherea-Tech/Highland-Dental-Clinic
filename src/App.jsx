@@ -9,6 +9,7 @@ import Services from "./Components/Services";
 import Testimonial from "./Components/Testimonial";
 import Footer from "./Components/Footer";
 import GeneralServices from "./Components/GeneralServices";
+import EmergencyDentalSmall from "./Components/EmergencyDentalSmall";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             element={
               <>
                 <HeroSection />
+                <EmergencyDentalSmall />
                 <Testimonial />
                 <Services />
                 <ContactUs />
