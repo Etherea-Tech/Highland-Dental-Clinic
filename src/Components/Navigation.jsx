@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Menu, X, ChevronDown, ChevronRight, Workflow, ChevronLeft, Phone, Clock, Mail } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import TopInfoBar from './TopInfoBar';
 
 const Navigation = () => {
@@ -97,16 +98,7 @@ const Navigation = () => {
       ]
     },
     { name: 'EMERGENCY SERVICES', href: '#' },
-    { 
-      name: 'OUR TEAM', 
-      dropdown: true,
-      submenu: [
-        {
-          name: 'Our Dentists',
-          items: []
-        }
-      ]
-    },
+    { name: 'OUR TEAM', href: '/team' },
     { name: 'ONLINE ENQUIRY', href: '#' },
     { name: 'CONTACT US', href: '#' }
   ];
@@ -140,12 +132,12 @@ const Navigation = () => {
                       <ChevronDown className={`ml-1 h-4 w-4 transition-transform ${openDropdown === item.name ? 'rotate-180' : ''}`} />
                     </button>
                   ) : (
-                    <a 
-                      href={item.href}
+                    <Link 
+                      to={item.href}
                       className="px-3 py-2 rounded-md text-sm font-medium hover:bg-[#e0e0e0] transition-colors"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   )}
 
                   {/* Main Dropdown Menu */}
@@ -290,13 +282,13 @@ const Navigation = () => {
                       )}
                     </div>
                   ) : (
-                    <a
-                      href={item.href}
+                    <Link
+                      to={item.href}
                       className="block px-3 py-3 rounded-md text-base font-medium hover:bg-[#e0e0e0] transition-colors"
                       onClick={() => setIsMenuOpen(false)}
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   )}
                 </div>
               ))}

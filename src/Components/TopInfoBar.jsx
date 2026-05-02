@@ -2,51 +2,38 @@ import { Phone, Mail, Clock } from "lucide-react";
 
 const TopInfoBar = () => {
   return (
-    <div className="bg-mydark font-poppins text-lightbg py-3 px-8 sticky top-0 z-50 border-b border-gray-600">
-      <div className="flex items-center justify-between gap-4 text-xs">
+    <div className="bg-mydark font-poppins text-lightbg py-2 md:py-3 px-4 md:px-8 sticky top-0 z-50 border-b border-gray-600">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 text-xs">
         {/* Contact Info */}
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-4 w-full md:w-auto">
           <a
             href="tel:+1-123-123-123"
             className="hover:text-blue-200 transition-colors flex items-center gap-1"
           >
-            <Phone className="h-4 w-4" />
-            <span className="text-lightbg font-normal text-[16px]">
-              Call Us:
-            </span>
-            <a
-              href="tel:+1-123-123-123"
-              className="hover:text-blue-200 text-lightbg font-normal text-[16px]  transition-colors whitespace-nowrap"
-            >
+            <Phone className="h-3.5 w-3.5 md:h-4 md:w-4" />
+            <span className="text-lightbg font-normal text-[14px] md:text-[16px]">
+              <span className="hidden md:inline">Call Us: </span>
               +1 (123) 123-123
-            </a>
+            </span>
           </a>
 
           <a
             href="mailto:highlandhillsdental@rogers.com"
-            className="hover:text-blue-200 transition-colors flex items-center gap-1"
+            className="hover:text-blue-200 transition-colors hidden sm:flex items-center gap-1"
           >
-            <Mail className="h-4 w-4" />
-            <span className="text-lightbg font-normal text-[16px]">
-              Email Us:
+            <Mail className="h-3.5 w-3.5 md:h-4 md:w-4" />
+            <span className="text-lightbg font-normal text-[14px] md:text-[16px]">
+              <span className="hidden md:inline">Email Us: </span>
+              highlandhillsdental@rogers.com
             </span>
-            <a
-              href="mailto:highlandhillsdental@rogers.com"
-              className="hover:text-blue-200 transition-colors truncate max-w-[180px] sm:max-w-none text-[16px]"
-              title="highlandhillsdental@rogers.com"
-            >
-              <span className="hidden sm:inline ">
-                highlandhillsdental@rogers.com
-              </span>
-            </a>
           </a>
         </div>
 
         {/* Appointment Badge */}
-        <div className="flex items-center gap-1 bg-lightblue px-2 py-2 rounded-full">
-          <Clock className="h-4 w-4" />
-          <span className="font-medium text-[16px] whitespace-nowrap">
-            Evening & Weekend Appointment Available
+        <div className="flex items-center justify-center gap-1 bg-lightblue px-3 md:px-4 py-1.5 md:py-2 rounded-full w-full sm:w-auto">
+          <Clock className="h-3.5 w-3.5 md:h-4 md:w-4" />
+          <span className="font-medium text-[12px] md:text-[14px] whitespace-nowrap">
+            Evening & Weekend Appointments Available
           </span>
         </div>
       </div>
