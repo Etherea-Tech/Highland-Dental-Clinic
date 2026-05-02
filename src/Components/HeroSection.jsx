@@ -1,138 +1,120 @@
-import React from "react";
-import { Calendar, Star, Award, Users } from "lucide-react";
-import { FcGoogle } from "react-icons/fc";
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronRight, Star } from "lucide-react";
+
+const images = [
+  "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2000&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=2000&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=2000&auto=format&fit=crop",
+];
 
 export default function HeroSection() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 6000); // Change image every 6 seconds
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="min-h-4/5 mb-8 bg-lightbg font-poppins">
-      {/* Hero Section */}
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Content */}
-          <div className="space-y-8">
-            {/* Patient Testimonial Card */}
-            <div className="flex items-center gap-4 animate-fade-in">
-              <div className="flex items-center gap-4  rounded-full px-4 py-2 shadow-lg border border-mydark">
-                <FcGoogle className="text-2xl" />
+    <section className="relative w-full h-[85vh] min-h-[600px] flex items-center bg-myblack overflow-hidden font-poppins">
+      {/* Background Image Carousel */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence initial={false}>
+          <motion.img
+            key={currentImageIndex}
+            src={images[currentImageIndex]}
+            alt="Premium Dental Clinic"
+            initial={{ opacity: 0, scale: 1.05 }}
+            animate={{ opacity: 0.5, scale: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </AnimatePresence>
+        {/* Elegant Dark Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-myblack via-myblack/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-myblack/50 via-transparent to-transparent"></div>
+      </div>
 
-                <div className="flex gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-yellow-400 text-yellow-400 drop-shadow-lg"
-                    />
-                  ))}
-                </div>
-              </div>
+      {/* Content */}
+      <div className="container mx-auto px-6 relative z-10 mt-16 md:mt-0">
+        <div className="max-w-2xl text-lightbg">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex items-center gap-3 mb-6"
+          >
+            <div className="flex text-yellow-400">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-current" />
+              ))}
             </div>
+            <span className="text-sm font-semibold tracking-[0.2em] uppercase text-yellow-400 drop-shadow-sm">
+              Trusted by 10,000+ Patients
+            </span>
+          </motion.div>
 
-            {/* Main Heading */}
-            <div>
-              <h1 className="text-5xl md:text-6xl font-bold text-slate-800 leading-tight">
-                Your One Stop Shop
-                <br />
-                <span className="text-slate-700">
-                  for all your dental needs
-                </span>
-              </h1>
-            </div>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-5xl md:text-7xl font-bold leading-tight mb-6"
+          >
+            Excellence in <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-200">
+              Dental Care
+            </span>
+          </motion.h1>
 
-            {/* Description */}
-            <p className="text-slate-600 text-lg leading-relaxed max-w-md">
-              Every dental care experience, that you feel comfortable with our
-              dentist professionals and than you look awesome.
-            </p>
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-lg md:text-xl text-lightbg/80 mb-10 leading-relaxed max-w-xl font-light"
+          >
+            Experience world-class dentistry in a luxurious, relaxing environment. 
+            We combine advanced technology with exceptional comfort to give you the smile you deserve.
+          </motion.p>
 
-            {/* CTA Button */}
-            <button className="bg-mydark text-white px-8 py-4 rounded-full font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200">
-              BOOK NOW
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex flex-col sm:flex-row gap-5"
+          >
+            <button className="group relative px-8 py-4 bg-lightblue text-lightbg font-semibold rounded-full overflow-hidden shadow-[0_0_20px_rgba(76,156,181,0.3)] transition-all hover:scale-105">
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                Book Your Consultation
+                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <div className="absolute inset-0 bg-opacity-80 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
             </button>
-          </div>
-
-          {/* Right Column - Image & Credentials */}
-          <div className="relative">
-            {/* Main Dentist Image */}
-            <div className="relative z-10">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-200 rounded-full blur-3xl opacity-40"></div>
-              <img
-                src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=600&h=700&fit=crop"
-                alt="Professional dentist"
-                className="relative z-10 w-full max-w-md mx-auto rounded-3xl shadow-2xl"
-              />
-            </div>
-
-            {/* Floating Credentials Card */}
-            <div className="absolute top-8 right-0 bg-white rounded-2xl shadow-xl p-6 max-w-xs z-20 animate-float">
-              <h3 className="text-sm font-semibold text-slate-700 mb-3">
-                Authorized licenses
-                <br />
-                from reputed dental
-                <br />
-                college
-              </h3>
-              <div className="flex gap-3 flex-wrap items-center">
-                <div className="flex items-center gap-1">
-                  <Award className="w-4 h-4" />
-                  <span className="text-xs">ADA</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Award className="w-4 h-4" />
-                  <span className="text-xs">ISO</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Star className="w-4 h-4" />
-                  <span className="text-xs">Certified</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <Users className="w-4 h-4" />
-                  <span className="text-xs">Member</span>
-                </div>
-              </div>
-              <p className="text-xs text-slate-500 mt-3">2021-2025</p>
-            </div>
-          </div>
+            <button className="px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-md text-white font-medium rounded-full transition-all border border-white/10 hover:border-white/30">
+              Explore Our Clinic
+            </button>
+          </motion.div>
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes float {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-20px);
-          }
-        }
-        @keyframes float-delay {
-          0%,
-          100% {
-            transform: translateY(0px);
-          }
-          50% {
-            transform: translateY(-15px);
-          }
-        }
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
-        .animate-float-delay {
-          animation: float-delay 3s ease-in-out infinite 1s;
-        }
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in {
-          animation: fade-in 0.6s ease-out;
-        }
-      `}</style>
-    </div>
+      {/* Carousel Indicators */}
+      <div className="absolute bottom-8 left-6 md:left-auto md:right-12 z-10 flex gap-3">
+        {images.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentImageIndex(index)}
+            className={`h-1.5 rounded-full transition-all duration-500 ${
+              index === currentImageIndex 
+                ? "w-10 bg-lightblue" 
+                : "w-4 bg-white/30 hover:bg-white/50"
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
