@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Phone, Activity, Search, ShieldCheck, Stethoscope, AlertTriangle, Link as LinkIcon, Smile, Scissors, Heart } from "lucide-react";
+import { ArrowLeft, Calendar, Phone, EyeOff, Smile, Move, Clock, Search, Laptop, Settings, Activity, CalendarCheck, Sparkles } from "lucide-react";
 
-const SurgicalExposureTeeth = () => {
+const Invisalign = () => {
   const timelineRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: timelineRef,
@@ -11,44 +11,54 @@ const SurgicalExposureTeeth = () => {
   });
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-  const necessaryReasons = [
+  const invisalignAdvantages = [
     {
-      title: "Impacted Canines",
-      desc: "Canine teeth, also known as cuspids, are critical for proper bite alignment and function. Impacted canines can lead to crowding, misalignment, or bite issues.",
-      icon: <AlertTriangle className="w-6 h-6" />
+      title: "Discreet Appearance",
+      desc: "Invisalign aligners are virtually invisible, allowing you to undergo orthodontic treatment without drawing attention to your smile.",
+      icon: <EyeOff className="w-6 h-6" />
     },
     {
-      title: "Aesthetic Concerns",
-      desc: "Exposing impacted front teeth can improve both the appearance and function of your smile.",
+      title: "Comfortable Fit",
+      desc: "The aligners are custom-made to fit snugly over your teeth, providing a comfortable orthodontic experience.",
       icon: <Smile className="w-6 h-6" />
     },
     {
-      title: "Orthodontic Alignment",
-      desc: "Properly positioned teeth are essential for achieving an optimal orthodontic outcome with braces or aligners.",
-      icon: <LinkIcon className="w-6 h-6" />
+      title: "Removable Convenience",
+      desc: "You can easily remove Invisalign aligners for eating, drinking, brushing, and flossing, ensuring optimal oral hygiene throughout treatment.",
+      icon: <Move className="w-6 h-6" />
+    },
+    {
+      title: "Predictable Results",
+      desc: "Invisalign uses advanced technology to plan your treatment, allowing you to visualize your future smile before you even begin.",
+      icon: <Clock className="w-6 h-6" />
     }
   ];
 
   const processSteps = [
     {
-      title: "Initial Evaluation",
-      desc: "We assess your orthodontic needs and take X-rays to determine the position and condition of impacted teeth.",
+      title: "Consultation",
+      desc: "During your consultation, we assess your orthodontic needs, discuss your smile goals, and determine if Invisalign is the right option for you.",
       icon: <Search className="w-6 h-6" />
     },
     {
-      title: "Surgical Procedure",
-      desc: "During the procedure, the impacted tooth is exposed by creating a small incision in the gum tissue and, if necessary, removing a small amount of bone covering the tooth.",
-      icon: <Scissors className="w-6 h-6" />
+      title: "Digital Impressions",
+      desc: "We take digital impressions or scans of your teeth, eliminating the need for uncomfortable traditional molds.",
+      icon: <Laptop className="w-6 h-6" />
     },
     {
-      title: "Bracket Placement",
-      desc: "An orthodontic bracket is attached to the exposed tooth, allowing your orthodontist to guide the tooth's movement using braces.",
-      icon: <ShieldCheck className="w-6 h-6" />
+      title: "Treatment Plan",
+      desc: "Using advanced software, we create a customized treatment plan that outlines the movement of your teeth throughout the process.",
+      icon: <Settings className="w-6 h-6" />
     },
     {
-      title: "Collaboration with Orthodontist",
-      desc: "Throughout your orthodontic treatment, we work closely with your orthodontist to ensure the tooth is guided into its optimal position.",
-      icon: <Heart className="w-6 h-6" />
+      title: "Aligner Progression",
+      desc: "You'll receive a series of aligners, each designed to gently shift your teeth into their desired positions. You'll switch to a new set of aligners approximately every one to two weeks.",
+      icon: <Activity className="w-6 h-6" />
+    },
+    {
+      title: "Regular Checkups",
+      desc: "We schedule regular checkups to monitor your progress and ensure that your treatment is on track.",
+      icon: <CalendarCheck className="w-6 h-6" />
     }
   ];
 
@@ -83,14 +93,14 @@ const SurgicalExposureTeeth = () => {
               animate={{ opacity: 1, scale: 1 }}
               className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-lightblue/10 text-lightblue mb-6"
             >
-              <LinkIcon className="w-8 h-8" />
+              <Sparkles className="w-8 h-8" />
             </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-myblack dark:text-lightbg mb-6 leading-tight transition-colors"
             >
-              Surgical Exposure of <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">Teeth</span>
+              Invisalign <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">Clear Aligners</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -98,7 +108,7 @@ const SurgicalExposureTeeth = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-mydark dark:text-lightbg/70 font-light leading-relaxed transition-colors"
             >
-              At Highland Hills Dental Centre, we offer specialized surgical procedures to expose impacted teeth as part of orthodontic treatment. Our skilled team is dedicated to ensuring a successful and well-coordinated approach to achieving your desired smile.
+              Welcome to Highland Hills Dental Centre, your trusted destination for achieving a beautifully aligned smile with Invisalign clear aligners. Our experienced team is dedicated to providing you with a comfortable, discreet, and effective orthodontic solution that transforms your smile.
             </motion.p>
           </div>
 
@@ -110,8 +120,8 @@ const SurgicalExposureTeeth = () => {
           >
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] group border border-gray-100 dark:border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200&auto=format&fit=crop" 
-                alt="Surgical Exposure of Teeth" 
+                src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1200&auto=format&fit=crop" 
+                alt="Invisalign Clear Aligners" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-lightblue/20 to-transparent mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -121,7 +131,7 @@ const SurgicalExposureTeeth = () => {
           </motion.div>
         </div>
 
-        {/* Section 1: Understanding & Why Necessary */}
+        {/* Section 1: Advantages */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -129,15 +139,14 @@ const SurgicalExposureTeeth = () => {
           className="mb-24"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Understanding Surgical Exposure for Orthodontic Treatment</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Discover the Power of Invisalign</h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
-              In some cases, teeth fail to erupt properly due to being impacted within the jawbone. This can prevent proper alignment and function of the teeth. Surgical exposure involves uncovering and positioning these impacted teeth, allowing orthodontists to guide them into their proper places using braces.
+              Invisalign is a revolutionary orthodontic treatment that uses a series of clear, removable aligners to straighten teeth without the need for traditional braces. Invisalign offers numerous advantages:
             </p>
-            <h3 className="text-2xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Why Surgical Exposure is Necessary</h3>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-            {necessaryReasons.map((item, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+            {invisalignAdvantages.map((item, idx) => (
               <div key={idx} className="bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-8 rounded-3xl hover:shadow-xl dark:hover:bg-white/[0.05] transition-all duration-300 group">
                 <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 text-lightblue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   {item.icon}
@@ -157,10 +166,7 @@ const SurgicalExposureTeeth = () => {
           className="mb-20"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">The Surgical Exposure Process</h2>
-            <p className="text-mydark dark:text-lightbg/70 max-w-2xl font-light text-lg transition-colors">
-              Our surgical exposure procedures are performed with precision and care, ensuring a coordinated approach with your orthodontist:
-            </p>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">The Invisalign Process</h2>
           </div>
           
           <div ref={timelineRef} className="relative max-w-5xl mx-auto mt-16 pb-10">
@@ -218,9 +224,9 @@ const SurgicalExposureTeeth = () => {
           viewport={{ once: true }}
           className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Expert Care for a Coordinated Approach</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Experience the Invisalign Difference</h2>
           <p className="text-mydark dark:text-lightbg/80 mb-6 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
-            At Highland Hills Dental Centre, we understand the importance of a coordinated effort between oral surgeons and orthodontists when performing surgical exposure procedures. Our experienced team ensures that the surgical exposure process seamlessly aligns with your orthodontic treatment plan.
+            At Highland Hills Dental Centre, we understand that a confident smile can positively impact your self-esteem and overall well-being. With Invisalign, you can achieve a straighter smile without the inconvenience of traditional braces.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a 
@@ -228,7 +234,7 @@ const SurgicalExposureTeeth = () => {
               className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-lightblue text-myblack px-8 py-4 rounded-full font-bold hover:bg-white transition-all shadow-[0_0_20px_rgba(76,156,181,0.3)] hover:-translate-y-1"
             >
               <Calendar className="w-5 h-5" />
-              Book Consultation
+              Book a Consultation
             </a>
             <a 
               href="tel:+1234567890"
@@ -245,4 +251,4 @@ const SurgicalExposureTeeth = () => {
   );
 };
 
-export default SurgicalExposureTeeth;
+export default Invisalign;

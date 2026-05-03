@@ -73,7 +73,7 @@ const Navigation = () => {
           name: 'Orthodontics',
           items: [
             { name: 'Braces', href: '/services/braces' },
-            'Invisalign'
+            { name: 'Invisalign', href: '/services/invisalign' }
           ]
         },
         {

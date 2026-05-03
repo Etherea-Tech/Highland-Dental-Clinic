@@ -37,6 +37,7 @@ import ToothWhitening from "./Components/Services/CosmeticDentistry/ToothWhiteni
 
 // Orthodontics Sub-Services
 import Braces from "./Components/Services/Orthodontics/Braces";
+import Invisalign from "./Components/Services/Orthodontics/Invisalign";
 
 function App() {
   return (
@@ -90,6 +91,7 @@ function App() {
           <Route path="/services/black-triangle-and-diastema-closure" element={<BlackTriangleDiastemaClosure />} />
           <Route path="/services/tooth-whitening" element={<ToothWhitening />} />
           <Route path="/services/braces" element={<Braces />} />
+          <Route path="/services/invisalign" element={<Invisalign />} />
         </Routes>
 
         <Footer />

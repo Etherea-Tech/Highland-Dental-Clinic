@@ -120,8 +120,8 @@ const Extractions = () => {
           >
             <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] group border border-gray-100 dark:border-white/10">
               <img 
-                src="https://images.unsplash.com/photo-1598256989800-fea5f6c8d0bd?q=80&w=1200&auto=format&fit=crop" 
-                alt="Tooth Extractions" 
+                src="https://images.unsplash.com/photo-1599422314077-f4dfdaa4cd09?q=80&w=1200&auto=format&fit=crop" 
+                alt="Extractions Procedure" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-lightblue/20 to-transparent mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
