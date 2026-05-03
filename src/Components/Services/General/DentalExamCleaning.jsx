@@ -14,7 +14,7 @@ const DentalExamCleaning = () => {
     {
       title: "Detect Early Issues",
       desc: "Early detection prevents minor problems from turning into major concerns. We identify cavities and gum disease in their earliest stages.",
-      icon:  <svg xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" width="256" height="256" viewBox="0 0 512 512">
+      icon:  <svg xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve" width="64" height="64" viewBox="0 0 512 512">
   <g fill="#4c9cb5">
     <path d="M316.882 163.46c-16.436 0-32 5.202-45.014 15.051-9.49 7.214-22.25 7.214-31.751-.005-13.004-9.844-28.68-15.046-45.331-15.046-41.503 0-75.268 33.913-75.268 75.596 0 15.079 4.347 29.571 12.58 41.92 22.24 33.145 17.089 57.957 17.807 63.451 0 38.29 15.104 73.574 41.445 96.818 6.795 5.977 16.037 7.172 24.077 3.353 7.928-3.767 12.651-11.523 12.323-20.231-.107-3.112-.216-6.328-.216-9.546 0-49.261 15.028-86.07 28.464-86.07s28.464 36.809 28.464 86.07c0 3.219-.109 6.33-.216 9.422-.328 8.766 4.448 16.563 12.463 20.345 8.126 3.833 17.307 2.548 23.955-3.358 26.327-23.353 41.427-58.637 41.427-96.802.184-1.356-2.223-32.402 18.884-65.778 7.298-11.678 11.274-24.999 11.502-38.523v-.015c.583-42.315-33.447-76.652-75.595-76.652m55.281 109.651c-22.11 34.96-19.391 63.315-20.48 71.316 0 35.193-13.824 67.637-37.929 89.021-4.164 3.696-9.239 3.318-12.607 1.73-4.245-2.004-6.676-5.947-6.503-10.56.112-3.229.221-6.457.221-9.798 0-46.769-13.624-96.475-38.869-96.475s-38.869 49.706-38.869 96.475c0 3.34.109 6.678.221 9.922.173 4.565-2.215 8.474-6.389 10.456-3.358 1.6-8.482 1.976-12.732-1.763-24.097-21.262-37.919-53.704-37.919-89.009-.697-5.166 4.33-33.627-19.563-69.235-7.082-10.621-10.824-23.117-10.824-36.135 0-35.947 29.099-65.191 64.864-65.191 14.365 0 27.869 4.473 39.044 12.933 13.255 10.07 31.07 10.075 44.325.005 11.185-8.464 24.575-12.938 38.727-12.938 36.355 0 65.694 29.606 65.189 66.103-.198 11.627-3.627 23.097-9.907 33.143"/>
     <path d="M190.096 191.17c-20.414 2.012-37.233 16.918-41.849 37.093a5.2 5.2 0 0 0 3.909 6.231c2.757.645 5.584-1.079 6.231-3.909 3.617-15.808 16.771-27.488 32.729-29.061a5.2 5.2 0 0 0 4.666-5.688c-.277-2.855-2.83-4.971-5.686-4.666"/>
@@ -56,7 +56,43 @@ const DentalExamCleaning = () => {
     {
       title: "Evaluate Dental Work",
       desc: "We ensure your existing dental work, such as fillings or crowns, are functioning properly and do not need replacement.",
-      icon: <ShieldCheck className="w-6 h-6" />
+      icon:  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlSpace="preserve"
+
+width="28" 
+height="68" 
+viewBox="0 0 512 512">
+
+    <defs>
+      <clipPath id="a" clipPathUnits="userSpaceOnUse">
+        <path fill="#4c9cb5" d="M0 512h512V0H0Z" data-original="#000000"></path>
+      </clipPath>
+    </defs>
+    <g
+      fill="none"
+      stroke="#4c9cb5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeMiterlimit="10"
+      strokeWidth="20"
+      clipPath="url(#a)"
+      transform="matrix(1.33333 0 0 -1.33333 0 682.667)"
+    >
+      <path
+        d="M394 227V34c0-13.255-10.745-24-24-24H34c-13.255 0-24 10.745-24 24v444c0 13.255 10.745 24 24 24h336c13.255 0 24-10.745 24-24V305.758"
+        data-original="#000000"
+      ></path>
+      <path
+        d="M148.083 430h107.833c11.736 0 21.25 9.514 21.25 21.25V502H126.833v-50.75c0-11.736 9.514-21.25 21.25-21.25M162 50H50v412h73.667M354 201V50H242M280.333 462H354V267.22M456.984 293.936l-79.898-79.898-67.419-30.017 30.016 67.419 117.168 117.169c10.329 10.328 27.075 10.328 37.403 0v-.001c10.328-10.328 10.328-27.074 0-37.402zM374.894 216.23l-34.32 34.32M481.397 318.35l-37.403 37.403"
+        data-original="#000000"
+      ></path>
+      <path
+        d="M162 318H98v64h64zm0-110H98v64h64zm0-110H98v64h64zM218.403 349.674l22.247-22.247 45.145 45.146M218.403 239.674l22.247-22.247 45.145 45.146M229.526 107.427l45.146 45.146M229.526 152.573l45.146-45.146"
+        data-original="#000000"
+      ></path>
+    </g>
+  </svg>
     }
   ];
 
@@ -183,7 +219,7 @@ const DentalExamCleaning = () => {
           className="mb-24"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Why Are Exams Important?</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors"><span className="bg-clip-text text-lightblue dark:text-lightblue">Dental  Exams </span>Are Important</h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-2xl font-light text-lg transition-colors">
               During these appointments, our experienced dentists perform a thorough evaluation of your teeth, gums, and overall oral structures.
             </p>
@@ -193,9 +229,7 @@ const DentalExamCleaning = () => {
             {examBenefits.map((item, idx) => (
               <div key={idx} className="bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-8 rounded-3xl hover:shadow-xl dark:hover:bg-white/[0.05] transition-all duration-300 group relative overflow-hidden">
                 {/* Step number watermark */}
-                <div className="absolute -top-4 right-4 text-[100px] font-black text-gray-50 dark:text-white/[0.02] group-hover:text-lightblue/[0.05] dark:group-hover:text-lightblue/[0.05] transition-colors pointer-events-none z-0">
-                  0{idx + 1}
-                </div>
+               
                 <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 text-lightblue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform relative z-10">
                   {item.icon}
                 </div>
