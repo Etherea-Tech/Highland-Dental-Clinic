@@ -27,6 +27,8 @@ import WisdomToothRemoval from "./Components/Services/OralSurgery/WisdomToothRem
 import ComplexDentalExtractions from "./Components/Services/OralSurgery/ComplexDentalExtractions";
 import DentalImplantPlacement from "./Components/Services/OralSurgery/DentalImplantPlacement";
 import BoneGraftingProcedures from "./Components/Services/OralSurgery/BoneGraftingProcedures";
+import ManagementOfOralPathology from "./Components/Services/OralSurgery/ManagementOfOralPathology";
+import SurgicalExposureTeeth from "./Components/Services/OralSurgery/SurgicalExposureTeeth";
 
 function App() {
   return (
@@ -74,6 +76,8 @@ function App() {
           <Route path="/services/complex-dental-extractions" element={<ComplexDentalExtractions />} />
           <Route path="/services/dental-implant-placement" element={<DentalImplantPlacement />} />
           <Route path="/services/bone-grafting-procedures" element={<BoneGraftingProcedures />} />
+          <Route path="/services/management-of-oral-pathology" element={<ManagementOfOralPathology />} />
+          <Route path="/services/surgical-exposure-of-teeth" element={<SurgicalExposureTeeth />} />
         </Routes>
 
         <Footer />

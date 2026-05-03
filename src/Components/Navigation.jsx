@@ -57,8 +57,8 @@ const Navigation = () => {
             { name: 'Complex Dental Extractions', href: '/services/complex-dental-extractions' },
             { name: 'Dental Implant Placement', href: '/services/dental-implant-placement' },
             { name: 'Bone Grafting Procedures', href: '/services/bone-grafting-procedures' },
-            'Management of Oral Pathology',
-            'Surgical Exposure of Teeth'
+            { name: 'Management of Oral Pathology', href: '/services/management-of-oral-pathology' },
+            { name: 'Surgical Exposure of Teeth', href: '/services/surgical-exposure-of-teeth' }
           ]
         },
         {
