@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Phone, HeartPulse, Activity, ShieldCheck, Zap, Syringe, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, Phone, HeartPulse, Activity, ShieldCheck, Zap, Syringe, Clock, Heart, Search } from "lucide-react";
 
 const IntravenousSedation = () => {
   const timelineRef = useRef(null);
@@ -13,46 +13,64 @@ const IntravenousSedation = () => {
 
   const sedationBenefits = [
     {
-      title: "Deep Relaxation",
-      desc: "Induces a state of profound calm and relaxation, effectively eliminating dental anxiety and fear.",
+      title: "Relaxation",
+      desc: "IV sedation helps you feel deeply relaxed and comfortable throughout the procedure, reducing anxiety and fear.",
+      icon: <Heart className="w-6 h-6" />
+    },
+    {
+      title: "Pain Relief",
+      desc: "Sedative medications minimize pain sensations, ensuring a pain-free experience during surgery.",
       icon: <Activity className="w-6 h-6" />
     },
     {
-      title: "Fast Acting",
-      desc: "Administered intravenously, the sedative medication takes effect almost immediately, ensuring you are comfortable right away.",
-      icon: <Zap className="w-6 h-6" />
+      title: "Amnesia Effect",
+      desc: "Many patients have little to no memory of the procedure afterward, contributing to a positive experience.",
+      icon: <Clock className="w-6 h-6" />
     },
     {
-      title: "Adjustable Levels",
-      desc: "Our team can carefully adjust the level of sedation throughout your procedure to ensure optimal comfort at all times.",
+      title: "Time Efficiency",
+      desc: "IV sedation allows our oral and maxillofacial surgeons to work efficiently, often completing complex procedures in a shorter time.",
+      icon: <Zap className="w-6 h-6" />
+    }
+  ];
+
+  const recommendations = [
+    {
+      title: "Complex Procedures",
+      desc: "For extensive oral and maxillofacial surgeries, IV sedation ensures your comfort and allows our surgeons to focus on the procedure.",
       icon: <ShieldCheck className="w-6 h-6" />
     },
     {
-      title: "Partial Amnesia",
-      desc: "Most patients remember very little to nothing about the procedure, making time seem to pass by very quickly.",
+      title: "Dental Anxiety",
+      desc: "Patients with dental anxiety or phobia can benefit from IV sedation to ease their nerves and ensure a more pleasant experience.",
+      icon: <HeartPulse className="w-6 h-6" />
+    },
+    {
+      title: "Long Procedures",
+      desc: "If the surgery is expected to take a longer time, IV sedation helps you remain comfortable throughout the procedure.",
       icon: <Clock className="w-6 h-6" />
     }
   ];
 
   const processSteps = [
     {
-      title: "Health Evaluation",
-      desc: "We conduct a thorough review of your medical history to ensure IV sedation is the safest and most appropriate choice for you.",
-      icon: <HeartPulse className="w-6 h-6" />
+      title: "Consultation",
+      desc: "During your initial consultation, we discuss your medical history, dental needs, and any concerns you may have about sedation.",
+      icon: <Search className="w-6 h-6" />
     },
     {
-      title: "Administration",
-      desc: "A small IV is placed in your arm, delivering precise amounts of sedative medication directly into your bloodstream.",
+      title: "Preparation",
+      desc: "On the day of the procedure, our experienced anesthesia provider explains the process, answers your questions, and prepares you for sedation.",
+      icon: <Heart className="w-6 h-6" />
+    },
+    {
+      title: "Sedation Administration",
+      desc: "The sedation medication is administered by our anesthesia provider, who monitors your vital signs and comfort throughout the procedure.",
       icon: <Syringe className="w-6 h-6" />
     },
     {
-      title: "The Procedure",
-      desc: "While you remain conscious and able to respond to basic commands, you will feel entirely relaxed and detached from the surgery.",
-      icon: <ShieldCheck className="w-6 h-6" />
-    },
-    {
-      title: "Recovery",
-      desc: "After the IV is removed, the effects begin to wear off quickly. However, you will still need a companion to drive you home safely.",
+      title: "Monitoring and Recovery",
+      desc: "While you're under sedation, your vital signs are continuously monitored. After the procedure, you are carefully monitored as you recover.",
       icon: <Activity className="w-6 h-6" />
     }
   ];
@@ -103,7 +121,7 @@ const IntravenousSedation = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-mydark dark:text-lightbg/70 font-light leading-relaxed transition-colors"
             >
-              For Oral and Maxillofacial Surgery Procedures. IV Sedation, often known as "twilight sleep," offers a fast-acting, deeply relaxing experience where you remain conscious but completely stress-free.
+              We are dedicated to ensuring your comfort and relaxation during oral and maxillofacial surgery procedures. We offer intravenous (IV) sedation as an effective option to help you feel at ease and pain-free while undergoing complex treatments. Our skilled team of professionals is committed to providing a positive experience for every patient.
             </motion.p>
           </div>
 
@@ -126,7 +144,7 @@ const IntravenousSedation = () => {
           </motion.div>
         </div>
 
-        {/* Section 1: Benefits */}
+        {/* Section 1: Understanding */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,10 +152,22 @@ const IntravenousSedation = () => {
           className="mb-24"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Advantages of IV Sedation</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Understanding Intravenous Sedation</h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
-              IV sedation allows for an incredibly comfortable experience, giving our oral surgeons the ability to precisely control your sedation level.
+              Intravenous (IV) sedation is a method of conscious sedation that involves administering sedative medications directly into your bloodstream via an IV line. This approach induces a state of deep relaxation and calmness while allowing you to remain conscious and responsive during the procedure.
             </p>
+          </div>
+        </motion.div>
+
+        {/* Section 2: Benefits */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="mb-10 text-center md:text-left">
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Benefits of Intravenous Sedation</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
@@ -153,7 +183,31 @@ const IntravenousSedation = () => {
           </div>
         </motion.div>
 
-        {/* Section 2: The Process (Timeline) */}
+        {/* Section 3: Recommendations */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="mb-10 text-center md:text-left">
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">When is IV Sedation Recommended?</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {recommendations.map((item, idx) => (
+              <div key={idx} className="bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-8 rounded-3xl hover:shadow-xl dark:hover:bg-white/[0.05] transition-all duration-300 group">
+                <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 text-lightblue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-myblack dark:text-lightbg mb-3">{item.title}</h3>
+                <p className="text-mydark dark:text-lightbg/60 leading-relaxed font-light">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Section 4: The Process (Timeline) */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -161,7 +215,7 @@ const IntravenousSedation = () => {
           className="mb-20"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">What to Expect</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">The IV Sedation Process</h2>
           </div>
           
           <div ref={timelineRef} className="relative max-w-5xl mx-auto mt-16 pb-10">
@@ -219,9 +273,9 @@ const IntravenousSedation = () => {
           viewport={{ once: true }}
           className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Experience Stress-Free Surgery</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Your Comfort and Well-Being First</h2>
           <p className="text-mydark dark:text-lightbg/80 mb-6 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
-            Our priority is your comfort. If you're undergoing oral surgery, ask us how IV sedation can transform your experience into a relaxing, anxiety-free appointment.
+            We prioritize your comfort and safety above all else. Our experienced team of professionals is trained to deliver IV sedation in a controlled and monitored environment to ensure a smooth and relaxed experience.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a 
