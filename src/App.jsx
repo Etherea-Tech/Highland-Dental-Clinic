@@ -43,6 +43,7 @@ import Invisalign from "./Components/Services/Orthodontics/Invisalign";
 import TMJTMD from "./Components/Services/AirwayFocusedDentistry/TMJTMD";
 import OralApplianceTherapy from "./Components/Services/AirwayFocusedDentistry/OralApplianceTherapy";
 import Bruxism from "./Components/Services/AirwayFocusedDentistry/Bruxism";
+import Myobrace from "./Components/Services/AirwayFocusedDentistry/Myobrace";
 
 function App() {
   return (
@@ -100,6 +101,7 @@ function App() {
           <Route path="/services/tmj-tmd-treatment" element={<TMJTMD />} />
           <Route path="/services/oral-appliance-therapy" element={<OralApplianceTherapy />} />
           <Route path="/services/bruxism" element={<Bruxism />} />
+          <Route path="/services/myobrace" element={<Myobrace />} />
         </Routes>
 
         <Footer />

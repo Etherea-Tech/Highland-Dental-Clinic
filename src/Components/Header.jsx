@@ -54,7 +54,7 @@ const serviceCategories = [
       { name: "TMJ/TMD Treatment", href: "/services/tmj-tmd-treatment", icon: <Activity className="w-4 h-4 text-lightblue" /> },
       { name: "Oral Appliance Therapy for Snoring & Sleep Apnea", href: "/services/oral-appliance-therapy", icon: <Wind className="w-4 h-4 text-lightblue" /> },
       { name: "Bruxism", href: "/services/bruxism", icon: <Moon className="w-4 h-4 text-lightblue" /> },
-      { name: "Myobrace", href: "/services/myobrace", icon: <Shield className="w-4 h-4 text-lightblue" /> },
+      { name: "Myobrace", href: "/services/myobrace", icon: <Shield className="w-4 h-4 text-lightblue" /> }
     ]
   },
   {

@@ -81,7 +81,8 @@ const Navigation = () => {
           items: [
             { name: 'TMJ/TMD Treatment', href: '/services/tmj-tmd-treatment' },
             { name: 'Oral Appliance Therapy for Snoring & Sleep Apnea', href: '/services/oral-appliance-therapy' },
-            { name: 'Bruxism', href: '/services/bruxism' }
+            { name: 'Bruxism', href: '/services/bruxism' },
+            { name: 'Myobrace', href: '/services/myobrace' }
           ]
         },
         {
