@@ -11,49 +11,64 @@ const TMJTMD = () => {
   });
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-  const tmdSymptoms = [
+  const understandingTMD = [
     {
-      title: "Jaw Pain & Stiffness",
-      desc: "Persistent pain or tenderness in the jaw area, often accompanied by a stiff or locked jaw feeling.",
+      title: "Jaw Pain or Discomfort",
+      desc: "Persistent pain or tenderness in the jaw area, which may feel stiff or locked.",
       icon: <Activity className="w-6 h-6" />
     },
     {
-      title: "Headaches & Migraines",
-      desc: "Frequent, unexplained headaches or migraines, particularly upon waking up in the morning.",
-      icon: <Zap className="w-6 h-6" />
-    },
-    {
-      title: "Clicking or Popping",
-      desc: "Audible clicking, popping, or grating sounds when opening or closing your mouth or chewing.",
+      title: "Clicking or Popping Sounds",
+      desc: "Audible clicking, popping, or grating sounds in the jaw when opening or closing your mouth.",
       icon: <AlertCircle className="w-6 h-6" />
     },
     {
-      title: "Earaches & Tinnitus",
-      desc: "Ringing in the ears or earaches not caused by an infection, often radiating from the jaw joint.",
+      title: "Difficulty Opening Mouth",
+      desc: "Challenges or limited mobility when trying to fully open or close the mouth.",
+      icon: <Shield className="w-6 h-6" />
+    },
+    {
+      title: "Headaches or Migraines",
+      desc: "Frequent, unexplained headaches or migraines, particularly upon waking up.",
+      icon: <Zap className="w-6 h-6" />
+    },
+    {
+      title: "Ear Pain or Ringing",
+      desc: "Ringing in the ears or earaches not caused by an infection, radiating from the jaw joint.",
       icon: <Stethoscope className="w-6 h-6" />
     }
   ];
 
   const treatmentProcess = [
     {
-      title: "Comprehensive Evaluation",
-      desc: "We perform a thorough examination of your jaw joints, bite alignment, and facial muscles using advanced diagnostic tools.",
+      title: "Diagnosis",
+      desc: "We begin with a thorough evaluation, including a discussion of your symptoms and medical history. We may use imaging and diagnostic techniques to accurately assess the condition of your TMJ.",
       icon: <Search className="w-6 h-6" />
     },
     {
       title: "Customized Treatment Plan",
-      desc: "Based on your specific symptoms and the root cause of your TMD, we develop a personalized treatment strategy.",
+      desc: "Based on our evaluation, we create a personalized treatment plan tailored to your specific needs. Our goal is to provide effective relief and long-term solutions.",
       icon: <ShieldCheck className="w-6 h-6" />
     },
     {
-      title: "Oral Appliance Therapy",
-      desc: "We often prescribe custom-fitted oral splints or nightguards to alleviate pressure on the TMJ and prevent teeth grinding.",
+      title: "Lifestyle Modifications",
+      desc: "We offer recommendations to reduce stress and avoid habits like teeth grinding that exacerbate TMJ issues.",
+      icon: <Heart className="w-6 h-6" />
+    },
+    {
+      title: "Orthodontic & Physical Therapy",
+      desc: "Addressing misalignment that contributes to TMJ/TMD symptoms, along with exercises and techniques to improve jaw mobility and reduce pain.",
+      icon: <Activity className="w-6 h-6" />
+    },
+    {
+      title: "Nightguards & Pain Management",
+      desc: "Customized nightguards to protect your teeth from grinding, plus strategies for managing pain including over-the-counter relievers, heat/cold therapy, and relaxation techniques.",
       icon: <Shield className="w-6 h-6" />
     },
     {
-      title: "Ongoing Relief & Management",
-      desc: "We provide guidance on jaw exercises, stress management, and dietary changes to ensure long-term comfort and joint health.",
-      icon: <Heart className="w-6 h-6" />
+      title: "Ongoing Monitoring",
+      desc: "We schedule regular follow-up appointments to monitor your progress, make any necessary adjustments, and ensure your comfort.",
+      icon: <Calendar className="w-6 h-6" />
     }
   ];
 
@@ -103,7 +118,7 @@ const TMJTMD = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-mydark dark:text-lightbg/70 font-light leading-relaxed transition-colors"
             >
-              Temporomandibular Joint Disorders (TMD) can cause significant discomfort and interfere with your daily life. Our airway-focused approach provides comprehensive care to relieve jaw pain, chronic headaches, and restore optimal function.
+              We understand the discomfort and challenges associated with TMJ (temporomandibular joint) disorders, often referred to as TMD. Our experienced team is dedicated to providing effective TMJ/TMD treatment to help alleviate pain and improve your quality of life.
             </motion.p>
           </div>
 
@@ -134,14 +149,14 @@ const TMJTMD = () => {
           className="mb-24"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Recognizing TMD Symptoms</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Understanding TMJ/TMD</h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
-              TMD can present in many ways, often mimicking other conditions. If you experience any of the following, professional treatment can help:
+              The temporomandibular joint (TMJ) is a complex joint that connects your jawbone to your skull. TMJ disorders, or TMD, can result from various factors, including stress, teeth grinding, misalignment, and jaw injuries. Common symptoms include:
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            {tmdSymptoms.map((item, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+            {understandingTMD.map((item, idx) => (
               <div key={idx} className="bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-8 rounded-3xl hover:shadow-xl dark:hover:bg-white/[0.05] transition-all duration-300 group">
                 <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 text-lightblue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   {item.icon}
@@ -161,9 +176,9 @@ const TMJTMD = () => {
           className="mb-20"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Our Treatment Approach</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Comprehensive TMJ/TMD Treatment</h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-2xl font-light text-lg transition-colors">
-              We focus on identifying the root cause of your TMD to provide lasting, effective relief rather than just masking symptoms.
+              We prioritize non-invasive and conservative treatments to manage your TMJ/TMD. Here is how we approach your care:
             </p>
           </div>
           
@@ -222,9 +237,9 @@ const TMJTMD = () => {
           viewport={{ once: true }}
           className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Reclaim Your Comfort</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Experience Relief and Comfort</h2>
           <p className="text-mydark dark:text-lightbg/80 mb-6 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
-            You don't have to live with chronic jaw pain. Schedule a consultation with our specialized team today and take the first step toward lasting relief and improved oral health.
+            At Highland Hills Dental Centre, we understand the impact that TMJ/TMD can have on your daily life. Our experienced team is committed to providing you with effective treatment options that alleviate discomfort and promote your well-being.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a 
