@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Phone, Activity, ShieldCheck, Heart, Moon, Shield, Zap } from "lucide-react";
+import { ArrowLeft, Calendar, Phone, Activity, ShieldCheck, Heart, Moon, Shield, Zap, Settings } from "lucide-react";
 
 const Bruxism = () => {
   const timelineRef = useRef(null);
@@ -13,54 +13,44 @@ const Bruxism = () => {
 
   const bruxismSymptoms = [
     {
-      title: "Worn or Flat Teeth",
-      desc: "Noticeable wearing down of tooth enamel, leading to flattened, chipped, or fractured teeth over time.",
-      icon: <Activity className="w-6 h-6" />
-    },
-    {
-      title: "Tooth Sensitivity",
-      desc: "Increased sensitivity to hot, cold, or sweet foods due to the loss of protective enamel from grinding.",
+      title: "Tooth Wear",
+      desc: "Bruxism can lead to enamel erosion, tooth sensitivity, and even fractured teeth.",
       icon: <Zap className="w-6 h-6" />
     },
     {
-      title: "Morning Jaw Pain",
-      desc: "Waking up with a sore, tired, or tight jaw, often accompanied by dull headaches radiating from the temples.",
-      icon: <Moon className="w-6 h-6" />
+      title: "Headaches and Jaw Pain",
+      desc: "Persistent teeth grinding can cause tension headaches and jaw discomfort.",
+      icon: <Activity className="w-6 h-6" />
     },
     {
-      title: "Sleep Disruption",
-      desc: "Grinding noises during sleep that can disrupt your rest or the rest of your partner.",
-      icon: <Heart className="w-6 h-6" />
+      title: "TMJ Disorders",
+      desc: "Bruxism can contribute to temporomandibular joint (TMJ) disorders, leading to jaw pain and dysfunction.",
+      icon: <Moon className="w-6 h-6" />
     }
   ];
 
   const treatmentProcess = [
     {
-      title: "Diagnosis",
-      desc: "We perform a thorough dental exam to check for signs of wear, evaluate your bite, and identify if bruxism is occurring.",
-      icon: <Search className="w-6 h-6" />
-    },
-    {
-      title: "Custom Nightguards",
-      desc: "We take digital impressions to create a comfortable, custom-fitted nightguard that protects your teeth while you sleep.",
+      title: "Nightguards",
+      desc: "Customized nightguards are designed to provide a protective barrier between your upper and lower teeth, preventing grinding and clenching during sleep. Nightguards also help alleviate the associated muscle tension.",
       icon: <Shield className="w-6 h-6" />
     },
     {
-      title: "Restoration",
-      desc: "If significant damage has occurred, we discuss restorative options like crowns or bonding to repair and strengthen affected teeth.",
-      icon: <ShieldCheck className="w-6 h-6" />
+      title: "Lifestyle Modifications",
+      desc: "We provide guidance on managing stress and reducing habits that can contribute to bruxism, such as chewing on pens or pencils.",
+      icon: <Heart className="w-6 h-6" />
     },
     {
-      title: "Management Strategy",
-      desc: "We provide advice on stress reduction techniques and muscle relaxation to help manage the underlying causes of grinding.",
-      icon: <Heart className="w-6 h-6" />
+      title: "Bite Correction",
+      desc: "In some cases, bruxism is related to an improper bite. We can recommend bite correction techniques to address this issue.",
+      icon: <Settings className="w-6 h-6" />
+    },
+    {
+      title: "TMJ Treatment",
+      desc: "If bruxism has led to TMJ-related issues, we offer comprehensive treatment to alleviate discomfort and restore proper jaw function.",
+      icon: <ShieldCheck className="w-6 h-6" />
     }
   ];
-
-  // Using a fallback for the Search icon since it was missed in imports above
-  const SearchIcon = ({ className }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-  );
 
   return (
     <div className="bg-lightbg dark:bg-myblack min-h-screen pt-32 pb-24 font-poppins transition-colors duration-300 relative overflow-hidden">
@@ -100,7 +90,7 @@ const Bruxism = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-myblack dark:text-lightbg mb-6 leading-tight transition-colors"
             >
-              Bruxism <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">Treatment</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">Bruxism</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -108,7 +98,7 @@ const Bruxism = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-mydark dark:text-lightbg/70 font-light leading-relaxed transition-colors"
             >
-              Protect your smile from the damaging effects of teeth grinding and clenching. Our comprehensive bruxism treatments prevent enamel wear, alleviate jaw pain, and ensure your teeth remain strong and healthy.
+              We understand the impact that bruxism, or teeth grinding and clenching, can have on your oral health and overall well-being. Our experienced team is dedicated to providing effective solutions to help you manage and alleviate the effects of bruxism.
             </motion.p>
           </div>
 
@@ -139,10 +129,13 @@ const Bruxism = () => {
           className="mb-24"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Recognizing Bruxism</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Understanding Bruxism</h2>
+            <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
+              Bruxism is a common condition characterized by the grinding, clenching, or gnashing of teeth, often involuntarily and during sleep. While occasional teeth grinding might not cause significant issues, chronic bruxism can lead to various oral health problems:
+            </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
             {bruxismSymptoms.map((item, idx) => (
               <div key={idx} className="bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-8 rounded-3xl hover:shadow-xl dark:hover:bg-white/[0.05] transition-all duration-300 group">
                 <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 text-lightblue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
@@ -163,7 +156,7 @@ const Bruxism = () => {
           className="mb-20"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Protecting Your Smile</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Effective Bruxism Solutions</h2>
           </div>
           
           <div ref={timelineRef} className="relative max-w-5xl mx-auto mt-16 pb-10">
@@ -194,7 +187,7 @@ const Bruxism = () => {
                       </div>
                       
                       <div className="w-14 h-14 rounded-2xl bg-lightblue/10 text-lightblue flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-transform relative z-10">
-                        {item.title === 'Diagnosis' ? <SearchIcon className="w-6 h-6 text-lightblue" /> : item.icon}
+                        {item.icon}
                       </div>
                       <h3 className="text-2xl font-bold text-myblack dark:text-lightbg mb-3 relative z-10">{item.title}</h3>
                       <p className="text-mydark dark:text-lightbg/70 leading-relaxed font-light relative z-10 text-lg">{item.desc}</p>
@@ -221,9 +214,9 @@ const Bruxism = () => {
           viewport={{ once: true }}
           className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Preserve Your Perfect Smile</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Expert Guidance for Bruxism Relief</h2>
           <p className="text-mydark dark:text-lightbg/80 mb-6 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
-            Don't let teeth grinding compromise your dental health. Contact us today to get fitted for a custom nightguard and protect your teeth for the future.
+            Our experienced team understands the complexities of bruxism and its potential effects. We work closely with you to determine the best approach for managing and alleviating your bruxism symptoms.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a 
