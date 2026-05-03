@@ -13,47 +13,47 @@ const LocalAnesthesia = () => {
 
   const anesthesiaBenefits = [
     {
+      title: "Pain Relief",
+      desc: "Local anesthesia eliminates pain sensations during dental treatments, ensuring a comfortable experience.",
+      icon: <HeartPulse className="w-6 h-6" />
+    },
+    {
       title: "Targeted Numbing",
-      desc: "Specifically numbs only the area being treated, ensuring you feel no pain while remaining completely awake and aware.",
+      desc: "The anesthesia is localized to the treatment area, allowing you to remain conscious and alert during the procedure.",
       icon: <Activity className="w-6 h-6" />
     },
     {
-      title: "Fast Acting",
-      desc: "Takes effect within minutes, allowing our dental professionals to begin your treatment promptly and comfortably.",
+      title: "Quick Onset",
+      desc: "Local anesthesia takes effect quickly, so you'll feel numb within a short time after the injection.",
       icon: <Zap className="w-6 h-6" />
     },
     {
-      title: "Safe and Common",
-      desc: "The most common form of anesthesia used in dentistry, with an exceptional safety profile for patients of all ages.",
-      icon: <ShieldCheck className="w-6 h-6" />
-    },
-    {
-      title: "No Recovery Time",
-      desc: "Because it does not affect your consciousness or motor skills, you can drive yourself home and resume your day immediately.",
+      title: "Temporary",
+      desc: "The effects of local anesthesia wear off after a few hours, allowing you to resume normal activities without lingering numbness.",
       icon: <Clock className="w-6 h-6" />
     }
   ];
 
-  const processSteps = [
+  const usages = [
     {
-      title: "Topical Numbing",
-      desc: "Before any injection, a topical numbing gel is applied to the gums to ensure the actual injection is as painless as possible.",
-      icon: <Heart className="w-6 h-6" />
-    },
-    {
-      title: "Administration",
-      desc: "The local anesthetic is gently injected near the treatment site. You may feel a slight pinch, but this fades instantly.",
+      title: "Tooth Extractions",
+      desc: "Local anesthesia ensures a pain-free extraction process.",
       icon: <Syringe className="w-6 h-6" />
     },
     {
-      title: "Verification",
-      desc: "We wait a few minutes and thoroughly test the area to guarantee complete numbness before beginning any dental work.",
+      title: "Fillings and Restorations",
+      desc: "Numbing the area ensures your comfort during cavity treatment and restorations.",
       icon: <ShieldCheck className="w-6 h-6" />
     },
     {
-      title: "The Treatment",
-      desc: "Throughout the procedure, you will feel pressure but no sharp pain. We constantly check in to ensure your ongoing comfort.",
-      icon: <HeartPulse className="w-6 h-6" />
+      title: "Root Canals",
+      desc: "Local anesthesia is essential for pain-free root canal therapy.",
+      icon: <Activity className="w-6 h-6" />
+    },
+    {
+      title: "Gum Treatments",
+      desc: "It's used for various gum treatments, including deep cleanings and periodontal procedures.",
+      icon: <Heart className="w-6 h-6" />
     }
   ];
 
@@ -103,7 +103,7 @@ const LocalAnesthesia = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-mydark dark:text-lightbg/70 font-light leading-relaxed transition-colors"
             >
-              The gold standard for pain-free dentistry. Local anesthesia ensures that your dental treatments—from fillings to root canals—are completely comfortable while you remain awake and alert.
+              At Highland Hills Dental Centre, your comfort is our top priority. We utilize local anesthesia to ensure that your dental procedures are pain-free and comfortable. Our experienced team is committed to providing a positive and stress-free experience for every patient.
             </motion.p>
           </div>
 
@@ -126,7 +126,22 @@ const LocalAnesthesia = () => {
           </motion.div>
         </div>
 
-        {/* Section 1: Benefits */}
+        {/* Section 1: Understanding */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="mb-10 text-center md:text-left">
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Understanding Local Anesthesia</h2>
+            <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
+              Local anesthesia is a common method used to numb a specific area of the mouth or face, allowing us to perform dental procedures without causing pain or discomfort. It is administered through injections near the treatment site and works by temporarily blocking nerve signals in the area.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Section 2: Benefits */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -150,7 +165,7 @@ const LocalAnesthesia = () => {
           </div>
         </motion.div>
 
-        {/* Section 2: The Process (Timeline) */}
+        {/* Section 3: Recommendations (Timeline / Process) */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +173,7 @@ const LocalAnesthesia = () => {
           className="mb-20"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">How We Ensure Comfort</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">When is Local Anesthesia Used?</h2>
           </div>
           
           <div ref={timelineRef} className="relative max-w-5xl mx-auto mt-16 pb-10">
@@ -171,7 +186,7 @@ const LocalAnesthesia = () => {
             ></motion.div>
 
             <div className="space-y-12 md:space-y-24 relative z-10">
-              {processSteps.map((item, idx) => (
+              {usages.map((item, idx) => (
                 <motion.div 
                   key={idx} 
                   initial={{ opacity: 0, y: 50 }}
@@ -216,9 +231,9 @@ const LocalAnesthesia = () => {
           viewport={{ once: true }}
           className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Pain-Free Care Guaranteed</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Your Comfort and Care</h2>
           <p className="text-mydark dark:text-lightbg/80 mb-6 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
-            Our precision technique ensures you won't feel a thing during your procedure. Contact us today to schedule your completely comfortable dental treatment.
+            We prioritize your comfort and ensure a pain-free experience during your dental treatments. Our skilled team uses local anesthesia to ensure that you have a positive and stress-free dental visit.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a 
