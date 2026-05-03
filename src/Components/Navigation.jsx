@@ -79,10 +79,9 @@ const Navigation = () => {
         {
           name: 'Airway Focused Dentistry',
           items: [
-            'TMJ/TMD Treatment',
-            'Oral Appliance Therapy for Snoring/Sleep Apnea',
-            'Bruxism',
-            'Myobrace'
+            { name: 'TMJ/TMD Treatment', href: '/services/tmj-tmd-treatment' },
+            { name: 'Oral Appliance Therapy for Snoring & Sleep Apnea', href: '/services/oral-appliance-therapy' },
+            { name: 'Bruxism', href: '/services/bruxism' }
           ]
         },
         {

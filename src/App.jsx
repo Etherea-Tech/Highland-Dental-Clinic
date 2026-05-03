@@ -39,6 +39,11 @@ import ToothWhitening from "./Components/Services/CosmeticDentistry/ToothWhiteni
 import Braces from "./Components/Services/Orthodontics/Braces";
 import Invisalign from "./Components/Services/Orthodontics/Invisalign";
 
+// Airway Focused Dentistry Sub-Services
+import TMJTMD from "./Components/Services/AirwayFocusedDentistry/TMJTMD";
+import OralApplianceTherapy from "./Components/Services/AirwayFocusedDentistry/OralApplianceTherapy";
+import Bruxism from "./Components/Services/AirwayFocusedDentistry/Bruxism";
+
 function App() {
   return (
     <Router>
@@ -92,6 +97,9 @@ function App() {
           <Route path="/services/tooth-whitening" element={<ToothWhitening />} />
           <Route path="/services/braces" element={<Braces />} />
           <Route path="/services/invisalign" element={<Invisalign />} />
+          <Route path="/services/tmj-tmd-treatment" element={<TMJTMD />} />
+          <Route path="/services/oral-appliance-therapy" element={<OralApplianceTherapy />} />
+          <Route path="/services/bruxism" element={<Bruxism />} />
         </Routes>
 
         <Footer />
