@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Phone, Wind, ShieldCheck, Smile, Clock, Heart } from "lucide-react";
+import { ArrowLeft, Calendar, Phone, Wind, ShieldCheck, Smile, Clock, Heart, Activity, Search } from "lucide-react";
 
 const NitrousOxideSedation = () => {
   const timelineRef = useRef(null);
@@ -13,46 +13,59 @@ const NitrousOxideSedation = () => {
 
   const benefits = [
     {
-      title: "Mild & Safe",
-      desc: "Nitrous oxide, or 'laughing gas', is one of the safest sedatives in dentistry, widely used for both adults and children.",
+      title: "Relaxation",
+      desc: "Nitrous oxide promotes a deep sense of relaxation and reduces anxiety, making dental procedures more comfortable.",
+      icon: <Heart className="w-6 h-6" />
+    },
+    {
+      title: "Fast-Acting",
+      desc: "The effects of nitrous oxide take effect quickly, allowing you to relax within minutes of administration.",
+      icon: <Zap className="w-6 h-6" />
+    },
+    {
+      title: "Safety",
+      desc: "Nitrous oxide is considered safe and has a rapid onset and recovery time. It is also well-suited for both children and adults.",
       icon: <ShieldCheck className="w-6 h-6" />
     },
     {
-      title: "Immediate Relaxation",
-      desc: "Feelings of anxiety fade within minutes of inhaling the gas, replaced by a warm, comfortable sensation.",
+      title: "Controlled Sedation",
+      desc: "The level of sedation can be adjusted by your dental professional to ensure your comfort throughout the procedure.",
+      icon: <Activity className="w-6 h-6" />
+    }
+  ];
+
+  const recommendations = [
+    {
+      title: "Dental Anxiety",
+      desc: "If you experience dental anxiety or nervousness, nitrous oxide can help you relax and undergo treatment more comfortably.",
       icon: <Smile className="w-6 h-6" />
     },
     {
-      title: "No Lingering Effects",
-      desc: "Unlike other forms of sedation, the effects wear off completely within minutes after the gas is stopped.",
-      icon: <Wind className="w-6 h-6" />
+      title: "Minor Procedures",
+      desc: "Nitrous oxide is often used for routine dental procedures, such as cleanings, fillings, and minor treatments.",
+      icon: <Activity className="w-6 h-6" />
     },
     {
-      title: "Drive Yourself Home",
-      desc: "Because it clears your system rapidly, you are typically able to drive yourself home and resume normal activities immediately.",
-      icon: <Clock className="w-6 h-6" />
+      title: "Gag Reflex",
+      desc: "Patients with a sensitive gag reflex can benefit from nitrous oxide sedation to minimize discomfort during procedures.",
+      icon: <ShieldCheck className="w-6 h-6" />
     }
   ];
 
   const processSteps = [
     {
-      title: "Preparation",
-      desc: "A small, comfortable mask is placed over your nose. You'll breathe normally through the mask during the entire procedure.",
-      icon: <Heart className="w-6 h-6" />
-    },
-    {
-      title: "Induction",
-      desc: "We begin administering a mixture of oxygen and nitrous oxide. Within a few minutes, you will feel relaxed and at ease.",
+      title: "Consultation",
+      desc: "On the day of your procedure, a mask delivering nitrous oxide is placed over your nose. You inhale the gas, and within minutes, you'll feel relaxed and comfortable.",
       icon: <Wind className="w-6 h-6" />
     },
     {
-      title: "The Treatment",
-      desc: "You remain awake and fully capable of communicating with our team, but without the stress or fear normally associated with dental work.",
-      icon: <ShieldCheck className="w-6 h-6" />
+      title: "Procedure",
+      desc: "While under nitrous oxide sedation, you remain conscious and responsive. Your dental professional performs the procedure while ensuring your comfort.",
+      icon: <Activity className="w-6 h-6" />
     },
     {
-      title: "Rapid Recovery",
-      desc: "Once the procedure is complete, we switch to 100% oxygen to clear the nitrous oxide from your system, returning you to normal in minutes.",
+      title: "Recovery",
+      desc: "Once the procedure is complete, the nitrous oxide is discontinued, and the effects wear off quickly. You can safely resume your normal activities.",
       icon: <Clock className="w-6 h-6" />
     }
   ];
@@ -103,7 +116,7 @@ const NitrousOxideSedation = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-mydark dark:text-lightbg/70 font-light leading-relaxed transition-colors"
             >
-              Commonly known as "laughing gas," Nitrous Oxide is a gentle, safe, and highly effective way to ease mild to moderate dental anxiety during your visit.
+              We prioritize your comfort and relaxation during dental procedures. We offer nitrous oxide sedation, also known as "laughing gas," as a safe and effective option to help you feel at ease while receiving dental care. Our experienced team is dedicated to providing a positive and stress-free experience for every patient.
             </motion.p>
           </div>
 
@@ -126,7 +139,7 @@ const NitrousOxideSedation = () => {
           </motion.div>
         </div>
 
-        {/* Section 1: Benefits */}
+        {/* Section 1: Understanding */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +147,22 @@ const NitrousOxideSedation = () => {
           className="mb-24"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Why Choose Nitrous Oxide?</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Understanding Nitrous Oxide Sedation</h2>
+            <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
+              Nitrous oxide, commonly referred to as "laughing gas," is a colorless and odorless gas that is administered through a mask placed over your nose. It induces a relaxed and calm state while allowing you to remain conscious and responsive during your dental procedure.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Section 2: Benefits */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="mb-10 text-center md:text-left">
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Benefits of Nitrous Oxide Sedation</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
@@ -150,7 +178,31 @@ const NitrousOxideSedation = () => {
           </div>
         </motion.div>
 
-        {/* Section 2: The Process (Timeline) */}
+        {/* Section 3: Recommendations */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="mb-10 text-center md:text-left">
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">When is Nitrous Oxide Sedation Recommended?</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {recommendations.map((item, idx) => (
+              <div key={idx} className="bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-8 rounded-3xl hover:shadow-xl dark:hover:bg-white/[0.05] transition-all duration-300 group">
+                <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 text-lightblue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-myblack dark:text-lightbg mb-3">{item.title}</h3>
+                <p className="text-mydark dark:text-lightbg/60 leading-relaxed font-light">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Section 4: The Process (Timeline) */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +210,7 @@ const NitrousOxideSedation = () => {
           className="mb-20"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">How It Works</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">The Nitrous Oxide Sedation Process</h2>
           </div>
           
           <div ref={timelineRef} className="relative max-w-5xl mx-auto mt-16 pb-10">
@@ -216,9 +268,9 @@ const NitrousOxideSedation = () => {
           viewport={{ once: true }}
           className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Relax During Your Visit</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Your Comfort is Our Priority</h2>
           <p className="text-mydark dark:text-lightbg/80 mb-6 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
-            Ask us about incorporating nitrous oxide into your next dental appointment for a truly stress-free and comfortable experience.
+            we understand the importance of a relaxed dental experience. Our skilled team is dedicated to providing a calming atmosphere and using nitrous oxide sedation to ensure your comfort and well-being.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a 
