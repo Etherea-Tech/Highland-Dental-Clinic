@@ -45,6 +45,13 @@ import OralApplianceTherapy from "./Components/Services/AirwayFocusedDentistry/O
 import Bruxism from "./Components/Services/AirwayFocusedDentistry/Bruxism";
 import Myobrace from "./Components/Services/AirwayFocusedDentistry/Myobrace";
 
+// Anesthesia Sub-Services
+import GeneralAnesthesia from "./Components/Services/Anesthesia/GeneralAnesthesia";
+import IntravenousSedation from "./Components/Services/Anesthesia/IntravenousSedation";
+import NitrousOxideSedation from "./Components/Services/Anesthesia/NitrousOxideSedation";
+import LocalAnesthesia from "./Components/Services/Anesthesia/LocalAnesthesia";
+import OralSedation from "./Components/Services/Anesthesia/OralSedation";
+
 function App() {
   return (
     <Router>
@@ -102,6 +109,11 @@ function App() {
           <Route path="/services/oral-appliance-therapy" element={<OralApplianceTherapy />} />
           <Route path="/services/bruxism" element={<Bruxism />} />
           <Route path="/services/myobrace" element={<Myobrace />} />
+          <Route path="/services/general-anesthesia" element={<GeneralAnesthesia />} />
+          <Route path="/services/intravenous-sedation" element={<IntravenousSedation />} />
+          <Route path="/services/nitrous-oxide-sedation" element={<NitrousOxideSedation />} />
+          <Route path="/services/local-anesthesia" element={<LocalAnesthesia />} />
+          <Route path="/services/oral-sedation" element={<OralSedation />} />
         </Routes>
 
         <Footer />

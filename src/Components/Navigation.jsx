@@ -88,11 +88,11 @@ const Navigation = () => {
         {
           name: 'Anesthesia',
           items: [
-            'General Anesthesia for Oral and Maxillofacial Surgery Procedures only',
-            'Intravenous Sedation for Oral and Maxillofacial Surgery Procedures only',
-            'Nitrous Oxide Sedation',
-            'Local Anesthesia',
-            'Oral Sedation'
+            { name: 'General Anesthesia for Oral and Maxillofacial Surgery Procedures only', href: '/services/general-anesthesia' },
+            { name: 'Intravenous Sedation for Oral and Maxillofacial Surgery Procedures only', href: '/services/intravenous-sedation' },
+            { name: 'Nitrous Oxide Sedation', href: '/services/nitrous-oxide-sedation' },
+            { name: 'Local Anesthesia', href: '/services/local-anesthesia' },
+            { name: 'Oral Sedation', href: '/services/oral-sedation' }
           ]
         }
       ]
