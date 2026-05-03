@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Phone, Wind, Moon, Activity, Search, ShieldCheck, Heart } from "lucide-react";
+import { ArrowLeft, Calendar, Phone, Wind, Moon, Activity, Search, ShieldCheck, Heart, Settings } from "lucide-react";
 
 const OralApplianceTherapy = () => {
   const timelineRef = useRef(null);
@@ -11,49 +11,62 @@ const OralApplianceTherapy = () => {
   });
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
+  const understandingConditions = [
+    {
+      title: "Snoring",
+      desc: "Snoring is the sound produced when the flow of air through the mouth and nose is partially blocked during sleep. It can lead to disrupted sleep for both the snorer and their partner.",
+      icon: <Wind className="w-6 h-6" />
+    },
+    {
+      title: "Sleep Apnea",
+      desc: "Sleep apnea is a more serious condition where breathing repeatedly stops and starts during sleep. This can lead to decreased oxygen levels and result in fatigue, morning headaches, and other health problems.",
+      icon: <Moon className="w-6 h-6" />
+    }
+  ];
+
   const therapyBenefits = [
     {
       title: "Improved Sleep Quality",
-      desc: "By keeping the airway open, these appliances reduce or eliminate snoring and sleep apnea events, allowing for deep, restorative sleep.",
+      desc: "By keeping the airway open, oral appliances can help you experience uninterrupted sleep and wake up feeling refreshed.",
       icon: <Moon className="w-6 h-6" />
     },
     {
-      title: "Enhanced Daily Energy",
-      desc: "Better sleep translates to increased daytime energy, improved focus, and a significant reduction in morning fatigue.",
+      title: "Enhanced Comfort",
+      desc: "Oral appliances are custom-designed to fit your mouth comfortably, allowing for natural jaw movement during sleep.",
+      icon: <Heart className="w-6 h-6" />
+    },
+    {
+      title: "Portable and Convenient",
+      desc: "Oral appliances are easy to travel with and do not require any external equipment or machinery.",
       icon: <Activity className="w-6 h-6" />
     },
     {
-      title: "Comfortable & Non-Invasive",
-      desc: "Unlike bulky CPAP machines, oral appliances are small, easy to wear, portable, and custom-fitted to your mouth.",
+      title: "Non-Invasive",
+      desc: "Unlike traditional CPAP machines, oral appliances do not involve masks or hoses.",
       icon: <ShieldCheck className="w-6 h-6" />
-    },
-    {
-      title: "Better Overall Health",
-      desc: "Treating sleep apnea lowers the risk of associated health conditions, including high blood pressure, heart disease, and stroke.",
-      icon: <Heart className="w-6 h-6" />
     }
   ];
 
   const processSteps = [
     {
-      title: "Airway Assessment",
-      desc: "We perform a detailed evaluation of your airway, jaw structure, and sleep history to determine if oral appliance therapy is right for you.",
+      title: "Consultation",
+      desc: "During your consultation, we discuss your sleep-related concerns, perform an evaluation, and determine if oral appliance therapy is suitable for you.",
       icon: <Search className="w-6 h-6" />
     },
     {
-      title: "Digital Impressions",
-      desc: "We take precise, comfortable digital scans of your teeth to ensure your custom appliance will fit perfectly.",
+      title: "Custom Appliance",
+      desc: "If oral appliance therapy is recommended, we create a custom appliance that is designed to fit your mouth comfortably and effectively.",
       icon: <ShieldCheck className="w-6 h-6" />
     },
     {
-      title: "Custom Fabrication",
-      desc: "Your appliance is fabricated in a specialized dental lab to gently hold your lower jaw forward, keeping your airway clear while you sleep.",
-      icon: <Wind className="w-6 h-6" />
+      title: "Adjustments",
+      desc: "We make any necessary adjustments to ensure the appliance fits properly and functions optimally.",
+      icon: <Settings className="w-6 h-6" />
     },
     {
-      title: "Fitting & Adjustment",
-      desc: "We ensure the appliance fits comfortably and provide instructions on how to use and care for it to maximize your sleep quality.",
-      icon: <Heart className="w-6 h-6" />
+      title: "Regular Follow-ups",
+      desc: "We schedule regular follow-up appointments to monitor your progress, make adjustments as needed, and ensure your comfort.",
+      icon: <Calendar className="w-6 h-6" />
     }
   ];
 
@@ -103,7 +116,7 @@ const OralApplianceTherapy = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-mydark dark:text-lightbg/70 font-light leading-relaxed transition-colors"
             >
-              Experience the benefits of a quiet, restful night's sleep. Our custom oral appliance therapy offers an effective, comfortable alternative to CPAP machines for treating snoring and mild to moderate obstructive sleep apnea.
+              At Highland Hills Dental Centre, we offer effective solutions for snoring and sleep apnea through oral appliance therapy. Our experienced team is dedicated to helping you achieve better sleep and improved overall health by addressing these common sleep-related issues.
             </motion.p>
           </div>
 
@@ -126,7 +139,31 @@ const OralApplianceTherapy = () => {
           </motion.div>
         </div>
 
-        {/* Section 1: Benefits */}
+        {/* Section 1: Conditions */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="mb-10 text-center md:text-left">
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Understanding Snoring & Sleep Apnea</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+            {understandingConditions.map((item, idx) => (
+              <div key={idx} className="bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-8 rounded-3xl hover:shadow-xl dark:hover:bg-white/[0.05] transition-all duration-300 group">
+                <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 text-lightblue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-myblack dark:text-lightbg mb-3">{item.title}</h3>
+                <p className="text-mydark dark:text-lightbg/60 leading-relaxed font-light">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Section 2: Benefits */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -150,7 +187,7 @@ const OralApplianceTherapy = () => {
           </div>
         </motion.div>
 
-        {/* Section 2: The Process (Timeline) */}
+        {/* Section 3: The Process (Timeline) */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +195,7 @@ const OralApplianceTherapy = () => {
           className="mb-20"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Your Path to Better Sleep</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">The Oral Appliance Therapy Process</h2>
           </div>
           
           <div ref={timelineRef} className="relative max-w-5xl mx-auto mt-16 pb-10">
@@ -216,9 +253,9 @@ const OralApplianceTherapy = () => {
           viewport={{ once: true }}
           className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Sleep Better, Live Better</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Experience Restful Sleep</h2>
           <p className="text-mydark dark:text-lightbg/80 mb-6 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
-            Don't let snoring or sleep apnea affect your health and vitality. Contact us today to discover if oral appliance therapy is the right solution for you.
+            At Highland Hills Dental Centre, we understand the importance of quality sleep for your overall health and well-being. Our experienced team is committed to providing you with effective oral appliance therapy solutions that alleviate snoring and sleep apnea symptoms.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a 
