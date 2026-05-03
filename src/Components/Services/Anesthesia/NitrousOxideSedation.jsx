@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Phone, Wind, ShieldCheck, Smile, Clock, Heart, Activity, Search } from "lucide-react";
+import { ArrowLeft, Calendar, Phone, Wind, ShieldCheck, Smile, Clock, Heart, Activity, Search, Zap } from "lucide-react";
 
 const NitrousOxideSedation = () => {
   const timelineRef = useRef(null);
