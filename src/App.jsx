@@ -30,6 +30,9 @@ import BoneGraftingProcedures from "./Components/Services/OralSurgery/BoneGrafti
 import ManagementOfOralPathology from "./Components/Services/OralSurgery/ManagementOfOralPathology";
 import SurgicalExposureTeeth from "./Components/Services/OralSurgery/SurgicalExposureTeeth";
 
+// Cosmetic Dentistry Sub-Services
+import VeneersBonding from "./Components/Services/CosmeticDentistry/VeneersBonding";
+
 function App() {
   return (
     <Router>
@@ -78,6 +81,7 @@ function App() {
           <Route path="/services/bone-grafting-procedures" element={<BoneGraftingProcedures />} />
           <Route path="/services/management-of-oral-pathology" element={<ManagementOfOralPathology />} />
           <Route path="/services/surgical-exposure-of-teeth" element={<SurgicalExposureTeeth />} />
+          <Route path="/services/veneers-and-bonding" element={<VeneersBonding />} />
         </Routes>
 
         <Footer />

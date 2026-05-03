@@ -64,7 +64,7 @@ const Navigation = () => {
         {
           name: 'Cosmetic Dentistry',
           items: [
-            'Veneers & Bonding',
+            { name: 'Veneers & Bonding', href: '/services/veneers-and-bonding' },
             'Black Triangle & Diastema Closure',
             'Tooth Whitening'
           ]
