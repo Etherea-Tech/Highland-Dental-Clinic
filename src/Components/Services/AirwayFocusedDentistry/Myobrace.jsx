@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Phone, Activity, Search, ShieldCheck, Heart, Smile, Wind, RefreshCw, Zap } from "lucide-react";
+import { ArrowLeft, Calendar, Phone, Activity, Search, ShieldCheck, Heart, Smile, Wind, Settings, Zap } from "lucide-react";
 
 const Myobrace = () => {
   const timelineRef = useRef(null);
@@ -13,47 +13,52 @@ const Myobrace = () => {
 
   const myobraceBenefits = [
     {
-      title: "Corrects Oral Habits",
-      desc: "Addresses the root causes of crooked teeth by correcting poor oral habits like mouth breathing, thumb sucking, and incorrect swallowing.",
-      icon: <RefreshCw className="w-6 h-6" />
-    },
-    {
-      title: "Promotes Jaw Development",
-      desc: "Guides proper facial and jaw development in growing children, creating enough room for teeth to align naturally.",
+      title: "Early Intervention",
+      desc: "Myobrace is ideal for children as young as 3 to 15 years old, addressing issues during the crucial growth and development phase.",
       icon: <Activity className="w-6 h-6" />
     },
     {
-      title: "Improves Airway Function",
-      desc: "Encourages nasal breathing, which leads to better oxygen intake, improved sleep quality, and better overall health.",
+      title: "Natural Alignment",
+      desc: "Myobrace encourages the development of the jaws and facial structures, promoting a natural and harmonious alignment of teeth.",
+      icon: <Smile className="w-6 h-6" />
+    },
+    {
+      title: "Breathing and Tongue Posture",
+      desc: "Myobrace helps correct improper breathing habits and encourages proper tongue posture, contributing to overall oral health.",
       icon: <Wind className="w-6 h-6" />
     },
     {
-      title: "Reduces Need for Braces",
-      desc: "By treating the underlying issues early, Myobrace often minimizes or entirely eliminates the need for complex braces later in life.",
-      icon: <Smile className="w-6 h-6" />
+      title: "Non-Invasive",
+      desc: "Myobrace eliminates the need for traditional braces and extractions, providing a gentle and natural solution.",
+      icon: <ShieldCheck className="w-6 h-6" />
     }
   ];
 
   const processSteps = [
     {
-      title: "Initial Evaluation",
-      desc: "We perform a comprehensive assessment of your child's breathing, swallowing habits, and jaw development to determine if Myobrace is suitable.",
+      title: "Consultation",
+      desc: "During your consultation, we assess your orthodontic needs, discuss Myobrace treatment, and determine if it's the right fit for you or your child.",
       icon: <Search className="w-6 h-6" />
     },
     {
-      title: "Appliance Selection",
-      desc: "Your child is fitted with a specialized, comfortable intra-oral appliance designed to be worn for just 1-2 hours a day plus overnight while sleeping.",
-      icon: <ShieldCheck className="w-6 h-6" />
+      title: "Customized Treatment",
+      desc: "Based on your assessment, we create a personalized Myobrace treatment plan that addresses your specific concerns.",
+      icon: <Settings className="w-6 h-6" />
     },
     {
-      title: "Myobrace Activities",
-      desc: "We introduce an interactive education program consisting of daily breathing, tongue, and swallowing exercises to retrain the oral muscles.",
+      title: "Myobrace Appliances",
+      desc: "Myobrace involves using a series of removable appliances that help guide the teeth and jaw into proper alignment over time.",
       icon: <Zap className="w-6 h-6" />
     },
     {
-      title: "Monitoring Progress",
-      desc: "Regular clinic visits are scheduled to monitor habit correction, ensure the appliance is working correctly, and progress to the next stage of treatment.",
+      title: "Oral Habits",
+      desc: "Myobrace focuses on improving oral habits, breathing patterns, and tongue posture to promote natural development.",
       icon: <Heart className="w-6 h-6" />
+    },
+    {
+      title: "Regular Checkups",
+      desc: "We schedule regular checkups to monitor progress and make any necessary adjustments to your treatment plan.",
+      icon: <Calendar className="w-6 h-6" />
     }
   ];
 
@@ -95,7 +100,7 @@ const Myobrace = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-myblack dark:text-lightbg mb-6 leading-tight transition-colors"
             >
-              Myobrace <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">Treatment</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">Myobrace</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -103,7 +108,7 @@ const Myobrace = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-mydark dark:text-lightbg/70 font-light leading-relaxed transition-colors"
             >
-              A preventive pre-orthodontic treatment designed to address the underlying causes of crooked teeth and poor jaw development in children. By correcting poor oral habits early, we pave the way for natural dental alignment and healthier breathing.
+              Welcome to Highland Hills Dental Centre, your destination for holistic dental care. We are proud to offer Myobrace, an innovative and natural approach to orthodontics that focuses on addressing the root causes of orthodontic issues. Our dedicated team is committed to helping you achieve a healthier smile and overall well-being.
             </motion.p>
           </div>
 
@@ -134,9 +139,9 @@ const Myobrace = () => {
           className="mb-24"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">The Benefits of Early Intervention</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Understanding Myobrace</h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
-              Myobrace focuses on the root causes of orthodontic problems rather than just treating the symptoms (crooked teeth), leading to broader health benefits.
+              Myobrace is a comprehensive orthodontic system designed to correct orthodontic problems in a holistic and non-invasive manner. This treatment approach recognizes the importance of oral habits, breathing, and tongue posture in promoting optimal facial and dental development.
             </p>
           </div>
           
@@ -219,9 +224,9 @@ const Myobrace = () => {
           viewport={{ once: true }}
           className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">A Healthier Start for Your Child</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Experience the Myobrace Difference</h2>
           <p className="text-mydark dark:text-lightbg/80 mb-6 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
-            Give your child the gift of a naturally straight smile and healthier breathing habits. Contact us today to schedule a Myobrace evaluation.
+            At Highland Hills Dental Centre, we believe in providing holistic solutions that support your overall well-being. Myobrace not only helps improve your smile but also addresses underlying issues for a healthier and more functional oral system.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a 
