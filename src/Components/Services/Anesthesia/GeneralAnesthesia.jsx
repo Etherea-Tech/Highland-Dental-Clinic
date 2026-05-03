@@ -11,54 +11,39 @@ const GeneralAnesthesia = () => {
   });
   const lineHeight = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
-  const anesthesiaBenefits = [
+  const recommendations = [
     {
-      title: "Complete Comfort",
-      desc: "Provides total unconsciousness, ensuring you feel absolutely no pain or discomfort during complex oral and maxillofacial surgeries.",
-      icon: <HeartPulse className="w-6 h-6" />
-    },
-    {
-      title: "Amnesia Effect",
-      desc: "You will have no memory of the surgical procedure, making it ideal for patients with severe dental anxiety or undergoing extensive treatments.",
+      title: "Complex Procedures",
+      desc: "For extensive oral and maxillofacial surgeries, such as wisdom teeth extraction, jaw surgery, or implant placement, general anesthesia can provide optimal conditions for the surgeon to work.",
       icon: <Activity className="w-6 h-6" />
     },
     {
-      title: "Safe & Controlled",
-      desc: "Administered and continuously monitored by our highly trained anesthesiologists using state-of-the-art equipment.",
-      icon: <ShieldCheck className="w-6 h-6" />
+      title: "Anxiety or Fear",
+      desc: "General anesthesia is an excellent option for patients with dental anxiety or fear, ensuring a stress-free experience.",
+      icon: <HeartPulse className="w-6 h-6" />
     },
     {
-      title: "Efficiency",
-      desc: "Allows our surgeons to work efficiently and complete extensive, multi-step procedures in a single visit while you sleep peacefully.",
-      icon: <Clock className="w-6 h-6" />
+      title: "Medical Conditions",
+      desc: "Patients with certain medical conditions may benefit from general anesthesia to ensure their safety and comfort during surgery.",
+      icon: <ShieldCheck className="w-6 h-6" />
     }
   ];
 
   const processSteps = [
     {
-      title: "Pre-Surgical Consultation",
-      desc: "We review your medical history, current medications, and perform a physical evaluation to ensure general anesthesia is safe for you.",
+      title: "Consultation",
+      desc: "During your initial consultation, we discuss your oral health needs, medical history, and any concerns you may have about anesthesia.",
       icon: <CheckCircle className="w-6 h-6" />
     },
     {
-      title: "Preparation Guidelines",
-      desc: "You will receive specific instructions on fasting and medication adjustments to follow in the hours leading up to your surgery.",
+      title: "Evaluation",
+      desc: "We conduct a thorough evaluation to determine if general anesthesia is the appropriate option for your specific case.",
       icon: <Clock className="w-6 h-6" />
     },
     {
-      title: "Administration",
-      desc: "On the day of surgery, anesthesia is typically administered intravenously, gently guiding you into a deep sleep before the procedure begins.",
+      title: "Preparation",
+      desc: "On the day of your surgery, our anesthesia provider will explain the process, answer your questions, and prepare you for the procedure.",
       icon: <Syringe className="w-6 h-6" />
-    },
-    {
-      title: "Continuous Monitoring",
-      desc: "Throughout the surgery, your vital signs—including heart rate, blood pressure, and oxygen levels—are closely monitored by our team.",
-      icon: <HeartPulse className="w-6 h-6" />
-    },
-    {
-      title: "Recovery",
-      desc: "After the procedure, you will wake up in a comfortable recovery room. You will need a responsible adult to drive you home and stay with you.",
-      icon: <Heart className="w-6 h-6" />
     }
   ];
 
@@ -108,7 +93,7 @@ const GeneralAnesthesia = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-mydark dark:text-lightbg/70 font-light leading-relaxed transition-colors"
             >
-              For Oral and Maxillofacial Surgery Procedures. We offer state-of-the-art general anesthesia to ensure your complete comfort and safety during extensive surgical treatments, allowing you to sleep peacefully throughout the procedure.
+              We prioritize your comfort and safety during oral and maxillofacial surgery procedures. We offer the option of general anesthesia to ensure a pain-free and stress-free experience for complex or lengthy treatments. Our skilled team is dedicated to providing you with the highest level of care and expertise.
             </motion.p>
           </div>
 
@@ -131,7 +116,7 @@ const GeneralAnesthesia = () => {
           </motion.div>
         </div>
 
-        {/* Section 1: Benefits */}
+        {/* Section 1: Understanding */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -139,14 +124,26 @@ const GeneralAnesthesia = () => {
           className="mb-24"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Why Choose General Anesthesia?</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Understanding General Anesthesia</h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
-              General anesthesia is typically recommended for complex jaw surgeries, multiple extractions, or for patients with severe dental phobia. It ensures the safest, most comfortable experience possible.
+              General anesthesia is a state of controlled unconsciousness that is induced by qualified anesthesia providers. This approach ensures that you are completely asleep and pain-free during your procedure, allowing our oral and maxillofacial surgeons to perform complex surgeries with precision and efficiency.
             </p>
           </div>
+        </motion.div>
+
+        {/* Section 2: Recommendations */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="mb-10 text-center md:text-left">
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">When is General Anesthesia Recommended?</h2>
+          </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            {anesthesiaBenefits.map((item, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+            {recommendations.map((item, idx) => (
               <div key={idx} className="bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-8 rounded-3xl hover:shadow-xl dark:hover:bg-white/[0.05] transition-all duration-300 group">
                 <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 text-lightblue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   {item.icon}
@@ -158,7 +155,7 @@ const GeneralAnesthesia = () => {
           </div>
         </motion.div>
 
-        {/* Section 2: The Process (Timeline) */}
+        {/* Section 3: The Process (Timeline) */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -166,7 +163,10 @@ const GeneralAnesthesia = () => {
           className="mb-20"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">The Anesthesia Process</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">The General Anesthesia Process</h2>
+            <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
+              Our experienced team ensures that you are well-prepared and informed before undergoing general anesthesia:
+            </p>
           </div>
           
           <div ref={timelineRef} className="relative max-w-5xl mx-auto mt-16 pb-10">
@@ -224,9 +224,9 @@ const GeneralAnesthesia = () => {
           viewport={{ once: true }}
           className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Sleep Through Your Surgery</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Your Comfort and Safety First</h2>
           <p className="text-mydark dark:text-lightbg/80 mb-6 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
-            Don't let fear or anxiety prevent you from getting the surgical care you need. Contact our clinic today to discuss if general anesthesia is the right option for your upcoming procedure.
+            Your comfort and safety are our top priorities. We adhere to the highest standards of anesthesia care, ensuring that you have a smooth and worry-free surgical experience.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a 
