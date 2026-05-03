@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Phone, Activity, HeartPulse, ShieldCheck, Heart, Pill, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, Phone, Activity, HeartPulse, ShieldCheck, Heart, Pill, Clock, Smile } from "lucide-react";
 
 const OralSedation = () => {
   const timelineRef = useRef(null);
@@ -13,46 +13,41 @@ const OralSedation = () => {
 
   const sedationBenefits = [
     {
-      title: "Needle-Free",
-      desc: "Perfect for patients who have an aversion to needles, as the sedative is taken completely orally.",
+      title: "Reduced Anxiety",
+      desc: "Oral sedation effectively reduces dental anxiety and helps you feel more comfortable throughout your visit.",
+      icon: <Smile className="w-6 h-6" />
+    },
+    {
+      title: "Ease of Administration",
+      desc: "Taking medication by mouth is convenient and simple, eliminating the need for injections or needles.",
       icon: <Pill className="w-6 h-6" />
     },
     {
-      title: "Deep Relaxation",
-      desc: "Provides a moderate level of sedation where you feel incredibly relaxed and drowsy, often dozing off during the procedure.",
-      icon: <Activity className="w-6 h-6" />
-    },
-    {
       title: "Amnesia Effect",
-      desc: "Similar to IV sedation, most patients have little to no memory of the dental work once the medication wears off.",
+      desc: "Many patients have little to no memory of the procedure, contributing to a positive and less stressful experience.",
       icon: <Clock className="w-6 h-6" />
     },
     {
-      title: "Highly Safe",
-      desc: "An extremely safe method of sedation that has been used effectively in dentistry for decades.",
+      title: "Non-Invasive",
+      desc: "Oral sedation is non-invasive and suitable for patients of various ages.",
       icon: <ShieldCheck className="w-6 h-6" />
     }
   ];
 
-  const processSteps = [
+  const usages = [
     {
-      title: "Prescription",
-      desc: "Based on your medical history and anxiety level, we prescribe a specific oral sedative for you to pick up at your pharmacy.",
-      icon: <Pill className="w-6 h-6" />
-    },
-    {
-      title: "Taking the Medication",
-      desc: "You will take the medication usually an hour before your scheduled appointment, allowing it time to take full effect.",
-      icon: <Clock className="w-6 h-6" />
-    },
-    {
-      title: "The Appointment",
-      desc: "By the time you arrive (driven by a companion), you will feel very drowsy and deeply relaxed, ready for your treatment.",
+      title: "Dental Anxiety",
+      desc: "If you experience dental anxiety, oral sedation can help you relax and undergo treatment more comfortably.",
       icon: <HeartPulse className="w-6 h-6" />
     },
     {
-      title: "Recovery",
-      desc: "After your procedure, your companion will drive you home where you can rest. The effects will gradually wear off over a few hours.",
+      title: "Complex Procedures",
+      desc: "For longer or more involved dental procedures, oral sedation ensures your relaxation throughout the process.",
+      icon: <Activity className="w-6 h-6" />
+    },
+    {
+      title: "Sensitive Gag Reflex",
+      desc: "Patients with a sensitive gag reflex may benefit from oral sedation to minimize discomfort during treatments.",
       icon: <Heart className="w-6 h-6" />
     }
   ];
@@ -103,7 +98,7 @@ const OralSedation = () => {
               transition={{ delay: 0.1 }}
               className="text-xl text-mydark dark:text-lightbg/70 font-light leading-relaxed transition-colors"
             >
-              A simple, needle-free approach to relaxation. Oral sedation involves taking a prescribed pill prior to your appointment, ensuring you arrive completely calm and ready for your treatment.
+              We understand that dental anxiety or nervousness can hinder your oral health care. That's why we offer oral sedation as a safe and effective option to help you feel calm and comfortable during your dental visits. Our experienced team is dedicated to providing a positive and stress-free experience for every patient.
             </motion.p>
           </div>
 
@@ -126,7 +121,7 @@ const OralSedation = () => {
           </motion.div>
         </div>
 
-        {/* Section 1: Benefits */}
+        {/* Section 1: Understanding */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -134,7 +129,22 @@ const OralSedation = () => {
           className="mb-24"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Why Choose Oral Sedation?</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Understanding Oral Sedation</h2>
+            <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
+              Oral sedation involves taking prescribed medications by mouth before your dental appointment. These medications induce a state of relaxation and calmness, helping you feel at ease while still remaining conscious and responsive.
+            </p>
+          </div>
+        </motion.div>
+
+        {/* Section 2: Benefits */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-24"
+        >
+          <div className="mb-10 text-center md:text-left">
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Benefits of Oral Sedation</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
@@ -150,7 +160,7 @@ const OralSedation = () => {
           </div>
         </motion.div>
 
-        {/* Section 2: The Process (Timeline) */}
+        {/* Section 3: Recommendations (Timeline / Process) */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -158,7 +168,7 @@ const OralSedation = () => {
           className="mb-20"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">How Oral Sedation Works</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">When is Oral Sedation Used?</h2>
           </div>
           
           <div ref={timelineRef} className="relative max-w-5xl mx-auto mt-16 pb-10">
@@ -171,7 +181,7 @@ const OralSedation = () => {
             ></motion.div>
 
             <div className="space-y-12 md:space-y-24 relative z-10">
-              {processSteps.map((item, idx) => (
+              {usages.map((item, idx) => (
                 <motion.div 
                   key={idx} 
                   initial={{ opacity: 0, y: 50 }}
@@ -216,9 +226,9 @@ const OralSedation = () => {
           viewport={{ once: true }}
           className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Overcome Dental Anxiety</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Your Comfort and Well-Being First</h2>
           <p className="text-mydark dark:text-lightbg/80 mb-6 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
-            You don't need to be afraid of the dentist anymore. Contact us to learn if oral sedation is the right choice to make your next appointment a breeze.
+            we understand the importance of a comfortable dental experience. Our skilled team is dedicated to providing a calming environment and using oral sedation to ensure your relaxation and peace of mind.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a 
