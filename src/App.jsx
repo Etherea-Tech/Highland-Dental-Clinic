@@ -22,6 +22,12 @@ import CrownBridge from "./Components/Services/General/CrownBridge";
 import NightguardsSportsguards from "./Components/Services/General/NightguardsSportsguards";
 import EmergencyDentalCare from "./Components/Services/General/EmergencyDentalCare";
 
+// Oral Surgery Sub-Services
+import WisdomToothRemoval from "./Components/Services/OralSurgery/WisdomToothRemoval";
+import ComplexDentalExtractions from "./Components/Services/OralSurgery/ComplexDentalExtractions";
+import DentalImplantPlacement from "./Components/Services/OralSurgery/DentalImplantPlacement";
+import BoneGraftingProcedures from "./Components/Services/OralSurgery/BoneGraftingProcedures";
+
 function App() {
   return (
     <Router>
@@ -64,6 +70,10 @@ function App() {
           <Route path="/services/crown-and-bridge-procedures" element={<CrownBridge />} />
           <Route path="/services/nightguards-and-sportsguards" element={<NightguardsSportsguards />} />
           <Route path="/services/emergency-dental-care" element={<EmergencyDentalCare />} />
+          <Route path="/services/wisdom-tooth-removal" element={<WisdomToothRemoval />} />
+          <Route path="/services/complex-dental-extractions" element={<ComplexDentalExtractions />} />
+          <Route path="/services/dental-implant-placement" element={<DentalImplantPlacement />} />
+          <Route path="/services/bone-grafting-procedures" element={<BoneGraftingProcedures />} />
         </Routes>
 
         <Footer />

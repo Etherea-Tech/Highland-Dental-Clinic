@@ -41,22 +41,22 @@ const Navigation = () => {
         {
           name: 'General Dentistry',
           items: [
-            'Dental Exam and Cleaning',
-            'Emergency Dental Care',
-            'Tooth Coloured Restorations',
-            'Root Canals',
-            'Extractions',
-            'Crown and Bridge procedures',
-            'Nightguards/Sportsguards'
+            { name: 'Dental Exam and Cleaning', href: '/services/dental-exam-and-cleaning' },
+            { name: 'Emergency Dental Care', href: '/services/emergency-dental-care' },
+            { name: 'Tooth Coloured Restorations', href: '/services/tooth-coloured-restorations' },
+            { name: 'Root Canals', href: '/services/root-canals' },
+            { name: 'Extractions', href: '/services/extractions' },
+            { name: 'Crown and Bridge procedures', href: '/services/crown-and-bridge-procedures' },
+            { name: 'Nightguards/Sportsguards', href: '/services/nightguards-and-sportsguards' }
           ]
         },
         {
           name: 'Oral and Maxillofacial Surgery',
           items: [
-            'Wisdom Tooth Removal',
-            'Complex Dental Extractions',
-            'Dental Implant Placement',
-            'Bone Grafting Procedures',
+            { name: 'Wisdom Tooth Removal', href: '/services/wisdom-tooth-removal' },
+            { name: 'Complex Dental Extractions', href: '/services/complex-dental-extractions' },
+            { name: 'Dental Implant Placement', href: '/services/dental-implant-placement' },
+            { name: 'Bone Grafting Procedures', href: '/services/bone-grafting-procedures' },
             'Management of Oral Pathology',
             'Surgical Exposure of Teeth'
           ]
@@ -184,13 +184,13 @@ const Navigation = () => {
                           {item.submenu
                             .find(cat => cat.name === activeCategory)
                             ?.items.map((service, serviceIndex) => (
-                              <a
+                              <Link
                                 key={serviceIndex}
-                                href="#"
+                                to={service.href || "#"}
                                 className="block px-3 py-2 text-sm hover:bg-blue-50 rounded transition-colors border-l-2 border-transparent hover:border-[#0a0035]"
                               >
-                                {service}
-                              </a>
+                                {service.name || service}
+                              </Link>
                             ))
                           }
                         </div>
@@ -265,14 +265,14 @@ const Navigation = () => {
                                 {item.submenu
                                   .find(cat => cat.name === activeCategory)
                                   ?.items.map((service, serviceIndex) => (
-                                    <a
+                                    <Link
                                       key={serviceIndex}
-                                      href="#"
+                                      to={service.href || "#"}
                                       className="block px-6 py-2 text-sm hover:bg-blue-50 rounded transition-colors"
                                       onClick={() => setIsMenuOpen(false)}
                                     >
-                                      {service}
-                                    </a>
+                                      {service.name || service}
+                                    </Link>
                                   ))
                                 }
                               </div>
