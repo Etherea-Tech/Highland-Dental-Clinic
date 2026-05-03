@@ -33,6 +33,7 @@ import SurgicalExposureTeeth from "./Components/Services/OralSurgery/SurgicalExp
 // Cosmetic Dentistry Sub-Services
 import VeneersBonding from "./Components/Services/CosmeticDentistry/VeneersBonding";
 import BlackTriangleDiastemaClosure from "./Components/Services/CosmeticDentistry/BlackTriangleDiastemaClosure";
+import ToothWhitening from "./Components/Services/CosmeticDentistry/ToothWhitening";
 
 function App() {
   return (
@@ -84,6 +85,7 @@ function App() {
           <Route path="/services/surgical-exposure-of-teeth" element={<SurgicalExposureTeeth />} />
           <Route path="/services/veneers-and-bonding" element={<VeneersBonding />} />
           <Route path="/services/black-triangle-and-diastema-closure" element={<BlackTriangleDiastemaClosure />} />
+          <Route path="/services/tooth-whitening" element={<ToothWhitening />} />
         </Routes>
 
         <Footer />
