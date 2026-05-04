@@ -35,7 +35,44 @@ const serviceCategories = [
       <circle cx="9" cy="16.307" r="1" data-original="#000000"></circle>
     </g>
   </svg> },
-      { name: "Emergency Dental Care", href: "/services/emergency-dental-care", icon: <AlertCircle className="w-4 h-4 text-red-500" /> },
+      { name: "Emergency Dental Care", href: "/services/emergency-dental-care", icon:   <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlSpace="preserve"
+    width="20"
+    height="20"
+    viewBox="0 0 682.667 682.667"
+  >
+    <defs>
+      <clipPath id="a" clipPathUnits="userSpaceOnUse">
+        <path fill="#f44336" d="M0 512h512V0H0Z" data-original="#000000"></path>
+      </clipPath>
+    </defs>
+    <g
+      fill="none"
+      stroke="#f44336"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="20"
+      clipPath="url(#a)"
+      transform="matrix(1.33333 0 0 -1.33333 0 682.667)"
+    >
+      <path
+        strokeMiterlimit="22.926"
+        d="M346.574 439.13c-12.758 4.453-26.684 6.871-41.575 6.871-27.626 0-59.567-16.45-84.653-22.654M20.464 367.255c-6.803-17.124-10.465-36.175-10.465-56.252 0-38.105 15.79-72.52 41.182-97.063 33.599-32.478 32.151-42.951 35.829-76.048L94.998 86c4.866-31.607 16.159-59.998 50-59.998 14.749 0 27.739 7.596 31.516 28.337l13.094 71.883c4.263 23.408 15.964 32.529 30.391 32.529s26.127-9.122 30.39-32.529l13.094-71.883c3.778-20.74 16.767-28.337 31.516-28.337 33.842 0 45.134 28.391 50 59.998l7.988 51.892c3.678 33.097 2.23 43.57 35.829 76.048 19.264 18.62 33 42.923 38.508 70.208M285.812 406.212c-22 3.5-44.175 7.412-65.813 17.05-23.639 10.527-57.247 22.739-85.001 22.739-20.523 0-39.213-4.588-55.532-12.781"
+        data-original="#000000"
+      ></path>
+      <path
+        strokeMiterlimit="22.926"
+        d="m415.4 470.805 82.962-143.696c10.508-18.285-3.081-41.123-23.719-41.106h-167.6c-22.219 0-34.914 24.903-22.775 42.849l82.856 143.511c11.062 19.099 38.727 17.736 48.276-1.558M390.782 381.006v54.996m0-100v.008"
+        data-original="#000000"
+      ></path>
+      <path
+        strokeMiterlimit="2.613"
+        d="M43.86 405.698h.007"
+        data-original="#000000"
+      ></path>
+    </g>
+  </svg> },
       { name: "Tooth Coloured Restorations", href: "/services/tooth-coloured-restorations", icon: <Sparkles className="w-4 h-4 text-lightblue" /> },
       { name: "Root Canals", href: "/services/root-canals", icon: <Activity className="w-4 h-4 text-lightblue" /> },
       { name: "Extractions", href: "/services/extractions", icon: <Scissors className="w-4 h-4 text-lightblue" /> },
@@ -148,7 +185,7 @@ const Header = () => {
     <span className="text-2xl font-bold text-myblack dark:text-lightbg tracking-tight transition-colors">
       Highland Hills
     </span>
-    <p className="text-lightblue text-base font-medium">Dental Centre</p>
+    <p className="text-lightblue text-base font">Dental Centre</p>
   </Link>
 </div>
 
