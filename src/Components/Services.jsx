@@ -1,38 +1,82 @@
-import React from "react";
+
 import { motion } from "framer-motion";
 import {  Sparkles, AlignJustify, ShieldPlus, Wind, Syringe, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const Services = () => {
+
+
+
+ 
   const services = [
     {
       id: 1,
       title: "General Dentistry",
       description: "Comprehensive cleanings, exams, and restorations to maintain optimal oral health and prevent future complications.",
-      icon: <svg
-  xmlns="http://www.w3.org/2000/svg"
-  xmlSpace="preserve"
-  width="42"
-  height="42"
-  viewBox="0 0 64 64"
-  className="w-7 h-7 text-lightblue group-hover:text-white transition-colors"
+      icon:   <svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  version="1.1" 
+  xmlnsXlink="http://www.w3.org/1999/xlink" 
+  width="512" 
+  height="512" 
+  viewBox="0 0 512 512" 
+  style={{ enableBackground: "new 0 0 512 512" }}
+  className="w-9 h-9 text-lightblue group-hover:text-white transition-colors"
 >
-  <g fill="currentColor" data-name="Outline">
-    <path
-      d="M18.172 10.057a11.7 11.7 0 0 0-7.287 2.631 1 1 0 1 0 1.252 1.558 9.7 9.7 0 0 1 6.035-2.189 1 1 0 0 0 0-2"
-      data-original="#000000"
-    ></path>
-    <path
-      d="M60.806 29.362a17.4 17.4 0 0 0-1.187-15.146l.971-.531a2.709 2.709 0 0 0 0-4.755l-1.221-.668a5.83 5.83 0 0 1-2.323-2.324l-.668-1.22a2.711 2.711 0 0 0-4.756 0l-.668 1.221a6 6 0 0 1-.574.843c-6.293-1.99-12.908.176-18.38 6.03C24.71 5 16.714 4.958 11.21 7.742c-4.694.353-7.755 1.9-8.842 4.5a6.82 6.82 0 0 0 .426 5.61 17.4 17.4 0 0 0 .4 11.51 35 35 0 0 0 3.7 6.728c1.73 2.654 3.364 5.162 4.036 8.158a21.3 21.3 0 0 1 .377 3.9 21 21 0 0 0 .522 4.654c1.341 5.106 4.339 7.982 8.3 7.891 6.237-.142 7.782-6.206 9.023-11.073.74-2.9 1.407-5.948 2.85-5.948s2.11 3.047 2.85 5.948c1.241 4.867 2.786 10.925 9.022 11.073c3.943.045 6.961-2.782 8.3-7.891a21 21 0 0 0 .522-4.654 21.3 21.3 0 0 1 .377-3.9 15 15 0 0 1 .875-2.638c4.057-.482 6.741-1.979 7.748-4.372c.841-1.994.406-4.439-1.223-7.093c.107-.263.233-.515.333-.783M52.708 6.9l.668-1.22a.712.712 0 0 1 1.248 0l.668 1.22a7.8 7.8 0 0 0 3.117 3.119l1.222.668a.711.711 0 0 1 0 1.247l-1.222.668a7.8 7.8 0 0 0-3.117 3.117l-.668 1.222a.712.712 0 0 1-1.248 0l-.668-1.22a7.8 7.8 0 0 0-3.117-3.121l-1.222-.669a.71.71 0 0 1 0-1.246l1.221-.668A7.8 7.8 0 0 0 52.708 6.9m-48.5 6.117a4.97 4.97 0 0 1 3.114-2.49 17.5 17.5 0 0 0-3.342 4.469 3.8 3.8 0 0 1 .232-1.982zm46.905 30.8a23 23 0 0 0-.425 4.264 19.3 19.3 0 0 1-.458 4.22c-.635 2.431-2.342 6.472-6.314 6.4-4.721-.111-5.947-4.919-7.132-9.567c-.965-3.732-1.842-7.578-4.9-7.46-2.872.11-3.738 3.8-4.672 7.46-1.186 4.648-2.411 9.448-7.132 9.567-3.991.1-5.679-3.966-6.314-6.4a19.3 19.3 0 0 1-.458-4.22 23 23 0 0 0-.425-4.264c-.75-3.348-2.56-6.126-4.311-8.813a33 33 0 0 1-3.507-6.341 15.6 15.6 0 0 1-.822-8.343c3.929 5.5 12.569 11.546 22.949 15.917 9.007 3.732 17.4 5.738 24.534 5.552a16 16 0 0 0-.609 2.02zm1.494-4.079c-6.4.46-15.549-1.514-24.643-5.344-11.053-4.654-20-11.16-23.013-16.688a15.2 15.2 0 0 1 6.331-7.722c4.971-2.962 12.794-3.218 19.88 4.9C32.274 17.1 33.5 20.077 39 20.135a1 1 0 0 0 0-2c-3.9 0-4.91-1.828-5.8-3.656 4.592-5.056 10.04-7.226 15.28-6.133l-1.067.583a2.71 2.71 0 0 0 0 4.756l1.221.668a5.82 5.82 0 0 1 2.323 2.324l.668 1.219a2.71 2.71 0 0 0 4.756 0l.668-1.221a5.9 5.9 0 0 1 .93-1.254 15.42 15.42 0 0 1 .959 13.235A33 33 0 0 1 55.428 35a47 47 0 0 0-2.817 4.73zm7.237-3.27c-.606 1.44-2.316 2.46-4.815 2.962.631-1.116 1.34-2.213 2.071-3.334.787-1.209 1.579-2.45 2.294-3.747a5.13 5.13 0 0 1 .454 4.111z"
-      data-original="#000000"
-    ></path>
-    <path
-      d="m50.224 21.669-.684-.369a2.82 2.82 0 0 1-1.125-1.127l-.374-.683a1.96 1.96 0 0 0-1.719-1.019 1.96 1.96 0 0 0-1.722 1.013l-.374.684A2.82 2.82 0 0 1 43.1 21.3l-.683.373a1.958 1.958 0 0 0 0 3.436l.684.375a2.8 2.8 0 0 1 1.126 1.126l.374.683a1.96 1.96 0 0 0 1.718 1.02 1.96 1.96 0 0 0 1.719-1.019l.374-.685a2.83 2.83 0 0 1 1.125-1.125l.684-.374a1.958 1.958 0 0 0 0-3.436zm-1.643 2.056a4.8 4.8 0 0 0-1.921 1.92l-.3.683-.374-.682a4.8 4.8 0 0 0-1.921-1.921l-.684-.3.683-.374a4.8 4.8 0 0 0 1.922-1.921l.3-.684.374.683a4.83 4.83 0 0 0 1.921 1.921l.684.3z"
-      data-original="#000000"
-    ></path>
-    <circle cx="9" cy="16.307" r="1" data-original="#000000"></circle>
+  <g>
+    <path 
+      d="M462.472 106.444c-13.654-9.027-30.019-14.283-47.612-14.283h0a86.432 86.432 0 0 0-43.173 11.554l-30.358 17.502M489.29 134.62a86.118 86.118 0 0 1 8.87 20.8 86.874 86.874 0 0 1 3.14 23.18c0 9.32-.76 18.6-2.27 27.74M241.06 375.63c-.04-6.47-.54-12.9-1.47-19.27M241.07 410.63v18.1c0 6.43 5.22 11.65 11.65 11.65a49.7 49.7 0 0 0 21.27-4.79 49.489 49.489 0 0 0 17.15-13.45c7.06-8.65 13.1-18.03 18.05-27.96 4.95-9.92 8.81-20.4 11.48-31.24l4.39-17.83c1.72-7 7.99-11.91 15.2-11.91 3.6 0 6.97 1.23 9.65 3.33s4.68 5.08 5.54 8.58l4.39 17.83a150.66 150.66 0 0 0 29.53 59.2 49.673 49.673 0 0 0 17.15 13.45 49.7 49.7 0 0 0 21.27 4.79c3.22 0 6.13-1.3 8.24-3.41 2.11-2.11 3.41-5.03 3.41-8.24V376.7c0-21.6 4.97-42.91 14.53-62.29l29.7-60.22c2.27-4.6 4.33-9.3 6.17-14.07M197.63 125.25a86.817 86.817 0 0 1 29.59-24.1c1.85-.92 3.73-1.77 5.65-2.55M267.36 92.18c14.57.28 28.83 4.24 41.47 11.53l68.75 39.64M110.984 110.159C90.58 120.176 82.46 128.296 72.443 148.7c-10.017-20.404-18.137-28.524-38.541-38.541 20.404-10.017 28.524-18.137 38.541-38.541 10.017 20.404 18.137 28.524 38.541 38.541z" 
+      style={{ strokeWidth: 15, strokeLinecap: "round", strokeLinejoin: "round", strokeMiterlimit: 10 }} 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="15" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeMiterlimit="10" 
+      opacity="1"
+    />
+    <path 
+      d="M504.5 124.042c-16.878 8.286-23.595 15.003-31.881 31.881-8.286-16.878-15.003-23.595-31.881-31.881 16.878-8.286 23.595-15.003 31.881-31.881 8.286 16.878 15.003 23.595 31.881 31.881zM424.926 304.905c-12.902 6.334-18.036 11.468-24.37 24.37-6.334-12.902-11.468-18.036-24.37-24.37 12.902-6.334 18.036-11.468 24.37-24.37 6.334 12.902 11.468 18.037 24.37 24.37zM90.627 325.758l19.431-16.814M102.866 379.51l-43.909 50.744c-11.132 12.865-30.845 13.576-42.875 1.546h0c-12.03-12.03-11.319-31.743 1.546-42.875l51.273-44.367M139.398 337.291l-16.502 19.071M105.069 379.086l-36.273-36.273a4.433 4.433 0 0 1 0-6.269l11.643-11.643a4.433 4.433 0 0 1 6.269 0l36.273 36.273a4.433 4.433 0 0 1 0 6.269l-11.643 11.643a4.431 4.431 0 0 1-6.269 0zM46.785 365.719l35.378 35.378M92.73 221c9.58-54.2 56.92-95.37 113.87-95.37 63.87 0 115.65 51.78 115.65 115.65 0 63.88-51.78 115.66-115.65 115.66-58.88 0-107.49-44.01-114.72-100.94" 
+      style={{ strokeWidth: 15, strokeLinecap: "round", strokeLinejoin: "round", strokeMiterlimit: 10 }} 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="15" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeMiterlimit="10" 
+      opacity="1"
+    />
+    <circle 
+      cx="206.6" 
+      cy="241.283" 
+      r="83.02" 
+      style={{ strokeWidth: 15, strokeLinecap: "round", strokeLinejoin: "round", strokeMiterlimit: 10 }} 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="15" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeMiterlimit="10" 
+      opacity="1"
+    />
+    <path 
+      d="M193.393 286.789a12.811 12.811 0 0 1-9.131-3.826l-25.798-26.224c-4.961-5.043-4.894-13.153.149-18.114 5.043-4.96 13.153-4.895 18.114.149l16.096 16.362 39.199-44.991c4.648-5.333 12.738-5.89 18.072-1.243 5.334 4.647 5.89 12.738 1.243 18.072l-48.287 55.421a12.81 12.81 0 0 1-9.657 4.394z" 
+      style={{ strokeWidth: 15, strokeLinecap: "round", strokeLinejoin: "round", strokeMiterlimit: 10 }} 
+      fill="none" 
+      stroke="currentColor" 
+      strokeWidth="15" 
+      strokeLinecap="round" 
+      strokeLinejoin="round" 
+      strokeMiterlimit="10" 
+      opacity="1"
+    />
   </g>
 </svg>,
+      
+      
+      
+
+ 
       link: "/general-dentistry"
     },
     {
@@ -71,6 +115,11 @@ const Services = () => {
       link: "/services#anesthesia"
     },
   ];
+
+   const handleCardClick = (link) => {
+   
+    navigate(link);
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -125,7 +174,8 @@ const Services = () => {
             <motion.div
               variants={itemVariants}
               key={service.id}
-              className="group bg-lightbg dark:bg-myblack/50 rounded-3xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 dark:border-white/10 hover:border-lightblue/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm"
+            
+              className="group hover:cursor-pointer bg-lightbg dark:bg-myblack/50 rounded-3xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 dark:border-white/10 hover:border-lightblue/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm"
             >
               {/* Background Accent on Hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-lightblue/0 to-lightblue/0 group-hover:from-lightblue/5 group-hover:to-transparent transition-all duration-500"></div>
