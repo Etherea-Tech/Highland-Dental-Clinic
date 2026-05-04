@@ -3,3 +3,6 @@
 - [x] Add gardient in dental exam cleaning 
 - [ ] Adjust Logo
 - [ ] align icons and menu text in center
+- [x] Updated home page all icons 
+- [x] Updated all icons in header menu
+- [x] general service page icons updated
