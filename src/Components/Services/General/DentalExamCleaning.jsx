@@ -240,7 +240,7 @@ const DentalExamCleaning = () => {
               animate={{ opacity: 1, y: 0 }}
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-myblack dark:text-lightbg mb-6 leading-tight transition-colors"
             >
-              Dental Examination<span className="bg-clip-text text-lightblue dark:text-lightblue">  & Cleaning</span>
+              Dental Examination <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">  & Cleaning</span>
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -280,7 +280,7 @@ const DentalExamCleaning = () => {
           className="mb-24"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors"><span className="bg-clip-text text-lightblue dark:text-lightblue">Dental  Exams </span>Are Important</h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors"><span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">Dental  Exams </span>Are Important</h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-2xl font-light text-lg transition-colors">
               During these appointments, our experienced dentists perform a thorough evaluation of your teeth, gums, and overall oral structures.
             </p>
@@ -309,7 +309,7 @@ const DentalExamCleaning = () => {
           className="mb-20"
         >
           <div className="mb-10 text-center md:text-left">
-            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">The <span className="bg-clip-text text-lightblue dark:text-lightblue">Cleaning Process </span></h2>
+            <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">The <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">Cleaning Process </span></h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-2xl font-light text-lg transition-colors">
               Our skilled dental hygienists perform professional cleanings to complement your regular at-home oral hygiene routine.
             </p>
@@ -370,7 +370,7 @@ const DentalExamCleaning = () => {
           viewport={{ once: true }}
           className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Maintain <span className="text-lightblue dark:text-lightblue">Optimal Oral Health</span></h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Maintain <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400"> Optimal Oral Health</span></h2>
           <p className="text-mydark dark:text-lightbg/80 mb-8 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
             We recommend scheduling regular exams and cleanings every six months. By partnering with us, you're taking proactive steps toward a healthier smile that lasts a lifetime.
           </p>

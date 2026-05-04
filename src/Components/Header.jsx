@@ -143,13 +143,14 @@ const Header = () => {
       >
         <nav className="container mx-auto px-6 max-w-7xl flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex-shrink-0 z-50">
-            <Link to="/" className="flex items-center gap-2">
-              <span className="text-2xl font-bold text-myblack dark:text-lightbg tracking-tight transition-colors">
-                Highland<span className="text-lightblue">Dental</span>
-              </span>
-            </Link>
-          </div>
+  <div className="flex-shrink-0 z-50">
+  <Link to="/" className="flex flex-col items-end">
+    <span className="text-2xl font-bold text-myblack dark:text-lightbg tracking-tight transition-colors">
+      Highland Hills
+    </span>
+    <p className="text-lightblue text-base font-medium">Dental Centre</p>
+  </Link>
+</div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center h-full">
