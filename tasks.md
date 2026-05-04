@@ -1,2 +1,5 @@
-- [ ] set general dentistry icon 
-- [ ] set 
+- [x] set general dentistry icon 
+- [ ] set general-dentistry card hover effect 
+- [x] Add gardient in dental exam cleaning 
+- [ ] Adjust Logo
+- [ ] align icons and menu text in center
