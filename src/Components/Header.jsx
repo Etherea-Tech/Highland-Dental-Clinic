@@ -95,7 +95,73 @@ const serviceCategories = [
       ></path>
     </g>
   </svg> },
-      { name: "Root Canals", href: "/services/root-canals", icon: <Activity className="w-4 h-4 text-lightblue" /> },
+      { name: "Root Canals", href: "/services/root-canals", icon: <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlSpace="preserve"
+    width="28"
+    height="28"
+    fillRule="evenodd"
+    viewBox="0 0 1707 1707"
+  >
+    <g fill="#4c9cb5">
+      <path
+        d="M1061 1706c-81 0-109-124-109-150v-259c0-206-198-213-198 0v265c-10 66-58 190-161 128-81-49-183-204-204-355-30-216 24-167-87-386C83 518 404 233 853 451c450-218 771 67 552 498-112 219-58 170-88 386-21 156-153 371-256 371M560 416c-268 0-365 235-222 515 115 227 61 186 91 398 22 162 165 365 232 334 24-11 45-53 53-105v-261c0-266 278-259 278 0v257c3 38 31 144 101 102 72-44 166-189 185-327 29-212-25-171 91-398 205-402-91-647-507-440-5 3-12 3-18 0-100-50-198-75-284-75"
+        data-original="#000000"
+      ></path>
+      <path
+        d="M1085 1053c-188 0-451-151-584-49-51 39-157 72-157 28 1-39 52 2 133-60 192-147 558 137 729 6 68-52 134-52 178-43 26 5 17 44-9 39-132-28-129 79-290 79M410 773c-11 0-20-9-20-20 0-120 98-217 218-217 27 0 27 40 0 40-98 0-177 79-177 177-1 11-9 20-21 20m886 0c-11 0-20-9-20-20 0-98-80-178-178-178-26 0-26-39 0-39 121 0 218 97 218 217 0 11-9 20-20 20M989 218l-127-33c-11-3-17-14-14-25l39-145c3-11 14-17 24-14l122 33c11 2 17 13 14 24l-39 145c-2 9-10 15-19 15m-97-67 83 23 28-107-83-22z"
+        data-original="#000000"
+      ></path>
+      <path
+        d="m1004 293-192-51c-14-4-19-21-10-33l50-57c17-20 48 7 30 27l-29 33 125 33c-6-29-19-61 7-67 11-2 22 5 24 16l14 75c3 12-7 24-19 24"
+        data-original="#000000"
+      ></path>
+      <path
+        d="M720 979c-13 0-23-12-19-25l190-711c7-26 45-15 39 10L739 964c-2 9-10 15-19 15"
+        data-original="#000000"
+      ></path>
+      <circle cx="604" cy="1162" r="20" data-original="#000000"></circle>
+      <circle cx="663" cy="1069" r="20" data-original="#000000"></circle>
+      <circle cx="545" cy="1064" r="20" data-original="#000000"></circle>
+      <circle cx="514" cy="1152" r="20" data-original="#000000"></circle>
+      <circle cx="479" cy="1234" r="20" data-original="#000000"></circle>
+      <circle cx="582" cy="1250" r="20" data-original="#000000"></circle>
+      <circle cx="660" cy="1229" r="20" data-original="#000000"></circle>
+      <circle cx="656" cy="1326" r="20" data-original="#000000"></circle>
+      <circle cx="573" cy="1359" r="20" data-original="#000000"></circle>
+      <circle cx="490" cy="1329" r="20" data-original="#000000"></circle>
+      <circle cx="506" cy="1416" r="20" data-original="#000000"></circle>
+      <circle cx="601" cy="1453" r="20" data-original="#000000"></circle>
+      <circle cx="669" cy="1420" r="20" data-original="#000000"></circle>
+      <circle cx="596" cy="1557" r="20" data-original="#000000"></circle>
+      <circle cx="535" cy="1498" r="20" data-original="#000000"></circle>
+      <circle cx="662" cy="1513" r="20" data-original="#000000"></circle>
+      <circle cx="651" cy="1599" r="20" data-original="#000000"></circle>
+      <circle cx="686" cy="1133" r="20" data-original="#000000"></circle>
+      <circle cx="1115" cy="1162" r="20" data-original="#000000"></circle>
+      <circle cx="946" cy="1088" r="20" data-original="#000000"></circle>
+      <circle cx="1156" cy="1107" r="20" data-original="#000000"></circle>
+      <circle cx="1204" cy="1152" r="20" data-original="#000000"></circle>
+      <circle cx="1239" cy="1234" r="20" data-original="#000000"></circle>
+      <circle cx="1136" cy="1250" r="20" data-original="#000000"></circle>
+      <circle cx="1058" cy="1229" r="20" data-original="#000000"></circle>
+      <circle cx="1062" cy="1326" r="20" data-original="#000000"></circle>
+      <circle cx="1145" cy="1359" r="20" data-original="#000000"></circle>
+      <circle cx="1228" cy="1329" r="20" data-original="#000000"></circle>
+      <circle cx="1213" cy="1416" r="20" data-original="#000000"></circle>
+      <circle cx="1117" cy="1453" r="20" data-original="#000000"></circle>
+      <circle cx="1050" cy="1420" r="20" data-original="#000000"></circle>
+      <circle cx="1122" cy="1557" r="20" data-original="#000000"></circle>
+      <circle cx="1183" cy="1498" r="20" data-original="#000000"></circle>
+      <circle cx="1057" cy="1513" r="20" data-original="#000000"></circle>
+      <circle cx="1067" cy="1599" r="20" data-original="#000000"></circle>
+      <circle cx="1032" cy="1133" r="20" data-original="#000000"></circle>
+      <circle cx="836" cy="1051" r="20" data-original="#000000"></circle>
+      <circle cx="739" cy="1073" r="20" data-original="#000000"></circle>
+      <circle cx="1250" cy="1073" r="20" data-original="#000000"></circle>
+      <circle cx="459" cy="1093" r="20" data-original="#000000"></circle>
+    </g>
+  </svg> },
       { name: "Extractions", href: "/services/extractions", icon: <Scissors className="w-4 h-4 text-lightblue" /> },
       { name: "Crown and Bridge Procedures", href: "/services/crown-and-bridge-procedures", icon: <Layers className="w-4 h-4 text-lightblue" /> },
       { name: "Nightguards and Sportsguards", href: "/services/nightguards-and-sportsguards", icon: <Moon className="w-4 h-4 text-lightblue" /> },
