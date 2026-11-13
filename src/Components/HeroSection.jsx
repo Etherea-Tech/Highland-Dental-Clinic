@@ -1,119 +1,96 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, Star } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowRight, CalendarDays } from "lucide-react";
 
-const images = [
-  "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?q=80&w=2000&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=2000&auto=format&fit=crop",
+const slides = [
+  { src: "/images/clinic/clinic.jpeg", alt: "Highland Hills Dental Centre clinic entrance", label: "Our clinic", fit: "contain" },
+  { src: "/images/hero/dental-xray.jpg", alt: "Dental instruments held over a panoramic dental X-ray", label: "Dental X-ray" },
+  { src: "/images/hero/dental-instruments.jpg", alt: "A dental professional holding examination instruments", label: "Dental instruments" },
+  { src: "/images/hero/dental-care.jpg", alt: "A dental professional caring for a patient in a treatment room", label: "Dental care" },
 ];
 
 export default function HeroSection() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [motionAllowed, setMotionAllowed] = useState(() => !window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  const [isHovered, setIsHovered] = useState(false);
+  const [hasFocus, setHasFocus] = useState(false);
+  const [isPageVisible, setIsPageVisible] = useState(() => document.visibilityState === "visible");
+  const touchStart = useRef(null);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 6000); // Change image every 6 seconds
-    return () => clearInterval(timer);
+    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const onMotionChange = () => setMotionAllowed(!preference.matches);
+    const onVisibilityChange = () => setIsPageVisible(document.visibilityState === "visible");
+    preference.addEventListener("change", onMotionChange);
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    return () => {
+      preference.removeEventListener("change", onMotionChange);
+      document.removeEventListener("visibilitychange", onVisibilityChange);
+    };
   }, []);
 
+  useEffect(() => {
+    if (!motionAllowed || isHovered || hasFocus || !isPageVisible) return;
+    const timer = window.setInterval(() => setCurrentSlide((index) => (index + 1) % slides.length), 6000);
+    return () => window.clearInterval(timer);
+  }, [motionAllowed, isHovered, hasFocus, isPageVisible, currentSlide]);
+
+  const showSlide = (index) => {
+    setCurrentSlide((index + slides.length) % slides.length);
+  };
+
   return (
-    <section className="relative w-full h-[85vh] min-h-[600px] flex items-center bg-myblack overflow-hidden font-poppins">
-      {/* Background Image Carousel */}
-      <div className="absolute inset-0 z-0">
-        <AnimatePresence initial={false}>
-          <motion.img
-            key={currentImageIndex}
-            src={images[currentImageIndex]}
-            alt="Premium Dental Clinic"
-            initial={{ opacity: 0, scale: 1.05 }}
-            animate={{ opacity: 0.5, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        </AnimatePresence>
-        {/* Elegant Dark Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-myblack via-myblack/80 to-transparent"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-myblack/50 via-transparent to-transparent"></div>
-      </div>
-
-      {/* Content */}
-      <div className="container mx-auto px-6 relative z-10 mt-16 md:mt-0">
-        <div className="max-w-2xl text-lightbg">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex items-center gap-3 mb-6"
-          >
-            <div className="flex text-yellow-400">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-current" />
-              ))}
-            </div>
-            <span className="text-sm font-semibold tracking-[0.2em] uppercase text-yellow-400 drop-shadow-sm">
-              Trusted by 10,000+ Patients
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold leading-tight mb-6"
-          >
-            Excellence in <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-200">
-              Dental Care
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-lg md:text-xl text-lightbg/80 mb-10 leading-relaxed max-w-xl font-light"
-          >
-            Experience world-class dentistry in a luxurious, relaxing environment. 
-            We combine advanced technology with exceptional comfort to give you the smile you deserve.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-5"
-          >
-            <button className="group relative px-8 py-4 bg-lightblue text-lightbg font-semibold rounded-full overflow-hidden shadow-[0_0_20px_rgba(76,156,181,0.3)] transition-all hover:scale-105">
-              <span className="relative z-10 flex items-center justify-center gap-2">
-                Book Your Consultation
-                <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
-              <div className="absolute inset-0 bg-opacity-80 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
-            </button>
-            <button className="px-8 py-4 bg-white/5 hover:bg-white/10 backdrop-blur-md text-white font-medium rounded-full transition-all border border-white/10 hover:border-white/30">
-              Explore Our Clinic
-            </button>
-          </motion.div>
+    <section className="clinic-hero" aria-labelledby="hero-title">
+      <div className="clinic-container clinic-hero-grid">
+        <div className="clinic-hero-copy">
+          <p className="clinic-eyebrow">Welcome to Highland Hills Dental</p>
+          <h1 id="hero-title">Caring for your smile.<br /><span>Caring for you.</span></h1>
+          <p className="clinic-hero-description">We combine advanced technology with exceptional comfort to give you the smile you deserve. Personalized dental care for your whole family, right here in Kitchener.</p>
+          <Link to="/#contact" className="clinic-button clinic-button-large">Request an Appointment <ArrowRight size={18} aria-hidden="true" /></Link>
         </div>
-      </div>
-
-      {/* Carousel Indicators */}
-      <div className="absolute bottom-8 left-6 md:left-auto md:right-12 z-10 flex gap-3">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentImageIndex(index)}
-            className={`h-1.5 rounded-full transition-all duration-500 ${
-              index === currentImageIndex 
-                ? "w-10 bg-lightblue" 
-                : "w-4 bg-white/30 hover:bg-white/50"
-            }`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+        <div
+          className="clinic-hero-image clinic-hero-carousel"
+          role="region"
+          aria-roledescription="carousel"
+          aria-label="Clinic and dental care images"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          onFocus={() => setHasFocus(true)}
+          onBlur={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) setHasFocus(false); }}
+          onKeyDown={(event) => {
+            if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+              event.preventDefault();
+              showSlide(currentSlide + (event.key === "ArrowLeft" ? -1 : 1));
+            }
+          }}
+        >
+          <div
+            id="hero-slides"
+            className="clinic-carousel-viewport"
+            onTouchStart={(event) => { touchStart.current = { x: event.touches[0].clientX, y: event.touches[0].clientY }; }}
+            onTouchCancel={() => { touchStart.current = null; }}
+            onTouchEnd={(event) => {
+              if (!touchStart.current) return;
+              const deltaX = touchStart.current.x - event.changedTouches[0].clientX;
+              const deltaY = touchStart.current.y - event.changedTouches[0].clientY;
+              touchStart.current = null;
+              if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY)) showSlide(currentSlide + (deltaX > 0 ? 1 : -1));
+            }}
+          >
+            {slides.map((slide, index) => (
+              <div key={slide.src} className={`clinic-carousel-slide${index === currentSlide ? " is-active" : ""}`} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${slides.length}: ${slide.label}`} aria-hidden={index !== currentSlide}>
+                <img src={slide.src} srcSet={`${slide.src.replace(/\.(?:jpe?g)$/, "").replace(/\/images\/(?:clinic|hero)\//, "/images/responsive/")}-720.jpg 720w, ${slide.src.replace(/\.(?:jpe?g)$/, "").replace(/\/images\/(?:clinic|hero)\//, "/images/responsive/")}-1440.jpg 1440w`} sizes="(max-width: 599px) calc(100vw - 40px), (max-width: 899px) calc(100vw - 64px), (max-width: 1279px) calc((100vw - 114px) / 2), 583px" alt={slide.alt} style={{ objectFit: slide.fit || "cover" }} width="1260" height="750" fetchPriority={index === 0 ? "high" : "low"} decoding="async" />
+              </div>
+            ))}
+          </div>
+          <div className="clinic-carousel-dots" role="group" aria-label="Choose a hero image">
+            {slides.map((slide, index) => <button key={slide.src} type="button" aria-label={`Show image ${index + 1}: ${slide.label}`} aria-current={index === currentSlide ? "true" : undefined} onClick={() => showSlide(index)}><span /></button>)}
+          </div>
+          <div className="clinic-hero-card">
+            <span className="clinic-icon-tile"><CalendarDays size={25} aria-hidden="true" /></span>
+            <div><h2>Your smile. Your schedule.</h2><p>Evening and weekend appointments to fit your routine.</p></div>
+          </div>
+        </div>
       </div>
     </section>
   );

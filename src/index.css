@@ -3,7 +3,18 @@
 @theme {
     --font-poppins: Poppins, sans-serif;
     --color-mydark: #4a597a;
-    --color-myblack: #0A0035;
+    --color-myblack: #26364a;
     --color-lightblue: #4c9cb5;
     --color-lightbg: #FEFEFE;
   }
+
+body {
+  margin: 0;
+  background: #fefefe;
+  color: #4a597a;
+  font-family: Poppins, sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll { animation: none !important; }
+}

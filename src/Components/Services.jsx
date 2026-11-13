@@ -1,12 +1,4 @@
-import { motion } from "framer-motion";
-import {
-  Sparkles,
-  AlignJustify,
-  ShieldPlus,
-  Wind,
-  Syringe,
-  ArrowRight,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Services = () => {
@@ -250,127 +242,28 @@ const Services = () => {
     },
   ];
 
-  const handleCardClick = (link) => {
-    navigate(link);
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  };
-
+  const anchors = ["general", "cosmetic", "orthodontics", "surgery", "airway", "anesthesia"];
   return (
-    <section className="py-24 bg-white dark:bg-myblack transition-colors duration-300 font-poppins relative overflow-hidden">
-      {/* Decorative Blur */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-lightblue/5 dark:from-lightblue/10 via-transparent to-transparent pointer-events-none"></div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
-        <div className="mb-16 md:mb-20 flex flex-col items-center text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-8 h-1 bg-lightblue rounded-full"></div>
-              <span className="text-sm font-bold tracking-widest uppercase text-lightblue">
-                Clinic Expertise
-              </span>
-              <div className="w-8 h-1 bg-lightblue rounded-full"></div>
-            </div>
-            <h2 className="text-myblack dark:text-lightbg text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 transition-colors">
-              Our Premium{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">
-                Services
-              </span>
-            </h2>
-            <p className="font-poppins max-w-2xl mt-6 text-mydark dark:text-lightbg/80 text-lg leading-relaxed transition-colors">
-              At{" "}
-              <span className="font-semibold text-myblack dark:text-lightbg">
-                Highland Dental Clinics
-              </span>
-              , we are equipped with the latest dental technology to provide
-              optimum care for your comfort and peace of mind.
-            </p>
-          </motion.div>
+    <section id="services" className="clinic-section clinic-section-tint" aria-labelledby="services-title">
+      <div className="clinic-container">
+        <div className="clinic-section-heading">
+          <p className="clinic-eyebrow">Clinic expertise</p>
+          <h2 id="services-title">Our Comprehensive <span>Services</span></h2>
+          <p>Explore dental care for your family's comfort, confidence, and long-term oral health.</p>
         </div>
-
-        {/* Services Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-50px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 xl:gap-10"
-        >
-          {services.map((service) => (
-            <motion.div
-              variants={itemVariants}
-              key={service.id}
-              className="group hover:cursor-pointer bg-lightbg dark:bg-myblack/50 rounded-3xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-100 dark:border-white/10 hover:border-lightblue/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm"
-            >
-              {/* Background Accent on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-lightblue/0 to-lightblue/0 group-hover:from-lightblue/5 group-hover:to-transparent transition-all duration-500"></div>
-
-              {/* Service Icon */}
-              <div className="bg-white dark:bg-white/5 w-16 h-16 rounded-2xl flex justify-center items-center shadow-sm border border-gray-100 dark:border-white/10 mb-8 group-hover:bg-lightblue group-hover:border-lightblue transition-colors duration-300 relative z-10">
-                {service.icon}
-              </div>
-
-              {/* Service Content */}
-              <div className="relative z-10">
-                <h4 className="font-bold text-2xl text-myblack dark:text-lightbg mb-4 group-hover:text-lightblue dark:group-hover:text-lightblue transition-colors">
-                  {service.title}
-                </h4>
-                <p className="text-mydark dark:text-lightbg/70 leading-relaxed mb-8 font-light transition-colors">
-                  {service.description}
-                </p>
-
-                <Link
-                  to={service.link}
-                  className="inline-flex items-center gap-2 font-semibold text-sm text-myblack dark:text-lightbg group-hover:text-lightblue dark:group-hover:text-lightblue transition-colors"
-                >
-                  Explore Service
-                  <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </motion.div>
+        <div className="clinic-services-grid">
+          {services.map((service, index) => (
+            <article id={anchors[index]} className="clinic-service-card group" key={service.id}>
+              <div className="clinic-service-icon" aria-hidden="true">{service.icon}</div>
+              <h3>{service.title}</h3><p>{service.description}</p>
+              <Link to={service.link} className="clinic-text-link">Explore Service <ArrowRight size={16} aria-hidden="true" /><span className="sr-only">: {service.title}</span></Link>
+            </article>
           ))}
-        </motion.div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex flex-col items-center mt-20 text-center bg-myblack rounded-[2rem] p-10 relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-lightblue/20 via-transparent to-transparent pointer-events-none"></div>
-          <h3 className="text-2xl md:text-3xl font-bold text-lightbg mb-6 relative z-10">
-            Need a service not listed here?
-          </h3>
-          <p className="text-lightbg/80 mb-8 max-w-xl relative z-10">
-            We offer a comprehensive range of dental treatments. Contact us to
-            discuss your specific needs with our specialists.
-          </p>
-          <Link
-            to="/contact"
-            className="font-poppins font-semibold text-myblack bg-yellow-400 px-10 py-4 rounded-full hover:bg-yellow-300 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 relative z-10"
-          >
-            Contact Our Clinic
-          </Link>
-        </motion.div>
+        </div>
+        <div className="clinic-specialized">
+          <div><h3>Need a specialized service not listed here?</h3><p>Contact our team to discuss your dental care needs.</p></div>
+          <a className="clinic-button" href="tel:+15195789826">Contact Clinic: (519) 578-9826</a>
+        </div>
       </div>
     </section>
   );

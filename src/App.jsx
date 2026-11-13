@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import ContactUs from "./Components/ContactUs";
 import EmergencyDental from "./Components/EmergencyDental";
 import Header from "./Components/Header";
@@ -52,13 +53,28 @@ import NitrousOxideSedation from "./Components/Services/Anesthesia/NitrousOxideS
 import LocalAnesthesia from "./Components/Services/Anesthesia/LocalAnesthesia";
 import OralSedation from "./Components/Services/Anesthesia/OralSedation";
 
+function ScrollToLocation() {
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      target?.scrollIntoView({ behavior: "instant" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }
+  }, [pathname, hash]);
+  return null;
+}
+
 function App() {
   return (
     <Router>
-      <div className="App dark:bg-myblack min-h-screen transition-colors duration-300">
+      <div className="App min-h-screen bg-white">
+        <ScrollToLocation />
         <LanguageBar />
         <Header />
 
+        <main id="main-content">
         <Routes>
           {/* Home Page with all sections */}
           <Route
@@ -115,6 +131,7 @@ function App() {
           <Route path="/services/local-anesthesia" element={<LocalAnesthesia />} />
           <Route path="/services/oral-sedation" element={<OralSedation />} />
         </Routes>
+        </main>
 
         <Footer />
       </div>

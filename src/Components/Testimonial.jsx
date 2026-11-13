@@ -1,168 +1,60 @@
-import React from "react";
+import GoogleRating from "./GoogleRating";
+import { clinic } from "../clinicDetails";
 import { FcGoogle } from "react-icons/fc";
 import { FaQuoteLeft } from "react-icons/fa";
 import { Star } from "lucide-react";
-import { motion } from "framer-motion";
 
 const Testimonials = () => {
+  // Verified on Google Maps, sorted Newest, on November 13, 2026.
+  // Full review text supplied by the user; ratings verified on Google.
   const testimonials = [
     {
-      id: 1,
-      text: "The team at Highland Dental is incredibly professional. They made my root canal completely painless. Highly recommend their services!",
-      name: "Sarah Jenkins",
+      id: "ashley-b",
+      text: "I had a filling done today by Dr. Paridhi Bassi and it went really well. It was quick and I was comfortable the whole time. I also come here for my regular cleanings, and my hygienist is wonderful. She always remembers little details about me from my last visit, which I really appreciate. Everyone at the office is friendly and professional, and I'd definitely recommend Dr. Bassi and Highland Hills to anyone looking for a dentist.",
+      name: "Ashley B",
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjUhU5udDmwIo3VXM1sZNUEA1zgK5t9aXEcRPQaThxHF1Ru-646Z=w72-h72-p-rp-mo-br100",
       rating: 5,
     },
     {
-      id: 2,
-      text: "I've always had anxiety about the dentist, but their calming environment and expert staff completely changed my perspective. Best clinic in town.",
-      name: "Michael Chen",
+      id: "shreyas-dalsania",
+      text: "Navi was amazing! She gave us great advice and helpful suggestions, patiently answered all our questions, and even helped us get an appointment booked for the same day. The entire experience was smooth and pleasant. Excellent customer service thank you, Navi!",
+      name: "Shreyas Dalsania",
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjUHn2NKeEn09n6hXu2LpVd2wOx_DyA6dUElkpXa9dmqdk1xrnql=w72-h72-p-rp-mo-ba12-br100",
       rating: 5,
     },
     {
-      id: 3,
-      text: "Got my Invisalign here and the results are stunning. They explained every step of the process and the pricing was entirely transparent.",
-      name: "Emily Rodriguez",
-      rating: 5,
-    },
-    {
-      id: 4,
-      text: "I had a dental emergency on a Sunday and they saw me within an hour. I couldn't be more grateful for their prompt and compassionate care.",
-      name: "David Thompson",
-      rating: 5,
-    },
-    {
-      id: 5,
-      text: "State-of-the-art equipment and a very clean facility. The dentists are thorough and take the time to answer all of my questions.",
-      name: "Jessica Walsh",
-      rating: 5,
-    },
-    {
-      id: 6,
-      text: "My kids actually look forward to their dental checkups now! The pediatric team is phenomenal, so patient, and really makes them smile.",
-      name: "Robert Patel",
+      id: "priyal-gandhi",
+      text: "I just had all my fillings done here including my root canal. I had to say that my experience there was top notch and I recommend this Highland hills dental clinic to everyone. Best clinic in KWC area.",
+      name: "Priyal Gandhi",
+      image: "https://lh3.googleusercontent.com/a-/ALV-UjXoC8wfuMubSClWf2lkGqA3OW7HDzwvru1kAi4BFbzRsFLUAC20=w72-h72-p-rp-mo-br100",
       rating: 5,
     },
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-  };
-
   return (
-    <section className="py-24 bg-lightbg dark:bg-[#070025] transition-colors duration-300 relative overflow-hidden font-poppins">
-      {/* Decorative Background Blur */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-lightblue/10 dark:bg-lightblue/20 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
-      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-mydark/5 dark:bg-mydark/20 rounded-full blur-3xl pointer-events-none translate-y-1/3 -translate-x-1/3"></div>
-
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        {/* Header Section */}
-        <div className="mb-16 md:mb-20 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-2xl"
-          >
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-1 bg-lightblue rounded-full"></div>
-              <span className="text-sm font-bold tracking-widest uppercase text-lightblue">Testimonials</span>
-            </div>
-            <h2 className="text-myblack dark:text-lightbg text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 transition-colors">
-              Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">Thousands</span>
-            </h2>
-            <p className="text-mydark dark:text-lightbg/80 text-lg leading-relaxed transition-colors">
-              At <span className="font-semibold text-myblack dark:text-lightbg">Highland Dental</span>, we specialize in providing high quality dental services. Don't just take our word for it—read what our patients have to say.
-            </p>
-          </motion.div>
-          
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <div className="flex items-center gap-4 bg-white dark:bg-white/5 px-6 py-4 rounded-2xl shadow-sm border border-gray-100 dark:border-white/10 transition-colors">
-              <div className="flex flex-col">
-                <span className="text-sm text-mydark dark:text-lightbg/90 font-medium">Excellent</span>
-                <div className="flex gap-1 text-yellow-400 my-1">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-                </div>
-                <span className="text-xs text-mydark/60 dark:text-lightbg/50">Based on 300+ reviews</span>
-              </div>
-              <div className="w-px h-10 bg-gray-200 dark:bg-white/20"></div>
-              <FcGoogle className="w-8 h-8" />
-            </div>
-          </motion.div>
+    <section id="reviews" className="clinic-section clinic-reviews" aria-labelledby="reviews-title">
+      <div className="clinic-container">
+        <div className="clinic-reviews-heading">
+          <div><p className="clinic-eyebrow">Testimonials</p><h2 id="reviews-title">Trusted by <span>Patients</span></h2><p>A few recent words from our patients on Google.</p></div>
+          <GoogleRating />
         </div>
-
-        {/* Testimonials Grid */}
-        <motion.div 
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
+        <div className="clinic-reviews-grid">
           {testimonials.map((testimonial) => (
-            <motion.div
-              variants={itemVariants}
-              key={testimonial.id}
-              className="bg-white dark:bg-white/5 rounded-2xl p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border border-gray-50 dark:border-white/10 hover:shadow-xl dark:hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 hover:-translate-y-1 relative group backdrop-blur-sm"
-            >
-              <div className="absolute top-8 right-8 text-lightblue/10 dark:text-lightblue/20 group-hover:text-lightblue/20 dark:group-hover:text-lightblue/30 transition-colors">
-                <FaQuoteLeft className="w-12 h-12" />
+            <article key={testimonial.id} className="clinic-review-card">
+              <FaQuoteLeft className="clinic-review-quote" aria-hidden="true" />
+              <div className="clinic-review-stars" aria-label={`${testimonial.rating} out of 5 stars`}>
+                {[...Array(testimonial.rating)].map((_, i) => <Star key={i} size={17} fill="currentColor" aria-hidden="true" />)}
               </div>
-
-              {/* Rating */}
-              <div className="flex gap-1 text-yellow-400 mb-6">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-current" />
-                ))}
+              <blockquote>“{testimonial.text}”</blockquote>
+              <a className="clinic-review-more" href={clinic.mapUrl} target="_blank" rel="noreferrer" aria-label={`Read more of ${testimonial.name}’s review on Google Maps`}>Read More <span aria-hidden="true">&gt;</span></a>
+              <div className="clinic-review-author">
+                <div className="clinic-review-avatar" aria-hidden="true">{testimonial.image ? <img src={testimonial.image} alt="" width="43" height="43" loading="lazy" referrerPolicy="no-referrer" /> : testimonial.name.split(" ").map((part) => part[0]).join("")}</div>
+                <div><h3>{testimonial.name}</h3><span><FcGoogle size={13} aria-hidden="true" />Google Review</span></div>
               </div>
-
-              {/* Testimonial Text */}
-              <p className="text-mydark dark:text-lightbg/80 mb-8 leading-relaxed relative z-10 font-light transition-colors">
-                "{testimonial.text}"
-              </p>
-
-              {/* Client Info */}
-              <div className="flex items-center gap-4 mt-auto">
-                <div className="w-10 h-10 rounded-full bg-lightblue/10 flex items-center justify-center text-lightblue font-bold text-lg border border-lightblue/20">
-                  {testimonial.name.charAt(0)}
-                </div>
-                <div>
-                  <h4 className="font-semibold text-myblack dark:text-lightbg transition-colors">{testimonial.name}</h4>
-                  <span className="text-xs text-mydark dark:text-lightbg/60 flex items-center gap-1 transition-colors">
-                    <FcGoogle className="w-3 h-3" /> Google Review
-                  </span>
-                </div>
-              </div>
-            </motion.div>
+            </article>
           ))}
-        </motion.div>
-
-        {/* View More Button */}
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="flex justify-center mt-16"
-        >
-          <button className="font-poppins font-semibold text-lightbg bg-myblack dark:bg-lightblue dark:text-myblack px-10 py-4 rounded-full hover:bg-mydark dark:hover:bg-blue-300 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-1 hover:scale-105">
-            Read More Reviews
-          </button>
-        </motion.div>
+        </div>
+        <div className="clinic-section-action"><a className="clinic-button clinic-button-slate" href={clinic.mapUrl} target="_blank" rel="noreferrer">Read Google Reviews <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
   );

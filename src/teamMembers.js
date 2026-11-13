@@ -1,0 +1,32 @@
+export const teamMembers = [
+  {
+    id: "dr-paridhi-bassi",
+    name: "Dr. Paridhi Bassi",
+    role: "Principal Dentist, BDS DMD",
+    specialty: "General & Airway Focused Dentistry",
+    image: "/images/clinic/Dr.Bassi.jpeg",
+    imageSrcSet: "/images/responsive/Dr.Bassi-480.jpg 480w, /images/responsive/Dr.Bassi-960.jpg 960w",
+    imagePosition: "80% center",
+    bio: "Dr. Bassi received her DMD from Temple University. She is passionate about creating beautiful smiles and developing expertise in Airway Focused Dentistry.",
+  },
+  {
+    bio: "Vesna is part of our dental hygiene team. Speak with her about routine cleanings and caring for your smile between visits.",
+    id: "vesna-b",
+    name: "Vesna B",
+    role: "Hygienist",
+    specialty: "Dental Hygiene",
+    image: "/images/clinic/Vesna.jpeg",
+    imageSrcSet: "/images/responsive/Vesna-480.jpg 480w, /images/responsive/Vesna-960.jpg 960w",
+    imagePosition: "80% center",
+  },
+  {
+    bio: "Kimberley supports your everyday oral health as part of our hygiene team, with a focus on routine cleanings and preventive care.",
+    id: "kimberley-r",
+    name: "Kimberley R",
+    role: "Hygienist",
+    specialty: "Dental Hygiene",
+    image: "/images/clinic/Kimberly.jpeg",
+    imageSrcSet: "/images/responsive/Kimberly-480.jpg 480w, /images/responsive/Kimberly-960.jpg 960w",
+    imagePosition: "80% center",
+  },
+];

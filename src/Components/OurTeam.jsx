@@ -1,4 +1,5 @@
 import React from "react";
+import { teamMembers } from "../teamMembers";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Award, BookOpen, Users, GraduationCap } from "lucide-react";
@@ -6,9 +7,10 @@ import { ArrowLeft, Award, BookOpen, Users, GraduationCap } from "lucide-react";
 const OurTeam = () => {
   const doctors = [
     {
-      name: "Dr. Paridhi Bassi, BDS DMD",
-      role: "Lead Dentist",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=600&h=600",
+      id: "dr-paridhi-bassi",
+      name: "Dr. Paridhi Bassi",
+      role: "Principal Dentist, BDS DMD",
+      image: "/images/clinic/Dr.Bassi.jpeg",
       bio: "Dr. Paridhi Bassi received her Doctor of Dental Medicine (DMD) degree from Temple University, Philadelphia (2016) and has a Bachelor of Dental Surgery (BDS) degree from India. Dr. Bassi practiced General Dentistry for 5 years in India and migrated to Canada in 2012. After pursuing further education in the United States, Dr. Bassi has been practicing General Dentistry in North America since 2016. She is passionate about dentistry and believes in creating beautiful and healthy smiles. Besides General Dentistry, she is developing her expertise in Airway Focused Dentistry for kids and adults. Dr. Bassi is a family woman who loves spending time with her two sons and their activities and enjoys cooking and music.",
       education: [
         "Airway and Health Solutions Mini-Residency - Pediatrics (2023)",
@@ -25,28 +27,7 @@ const OurTeam = () => {
     }
   ];
 
-  const staff = [
-    {
-      name: "Vesna",
-      role: "Registered Dental Hygienist",
-      image: "https://images.unsplash.com/photo-1594824436998-dd40e4f69188?auto=format&fit=crop&q=80&w=400&h=400",
-    },
-    {
-      name: "Kimberley",
-      role: "Registered Dental Hygienist",
-      image: "https://images.unsplash.com/photo-1580281658223-9b93f18ea0fa?auto=format&fit=crop&q=80&w=400&h=400",
-    },
-    {
-      name: "Sara",
-      role: "Registered Dental Hygienist",
-      image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=400&h=400",
-    },
-    {
-      name: "Kate Pantea",
-      role: "Office Manager",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400&h=400",
-    }
-  ];
+  const staff = teamMembers.filter((member) => member.id !== "dr-paridhi-bassi");
 
   return (
     <div className="bg-lightbg dark:bg-myblack min-h-screen pt-32 pb-24 font-poppins transition-colors duration-300 relative overflow-hidden">
@@ -100,9 +81,10 @@ const OurTeam = () => {
 
         {/* Doctors Section */}
         <div className="mb-24 space-y-12">
-          {doctors.map((doc, idx) => (
+          {doctors.map((doc) => (
             <motion.div 
-              key={idx}
+              key={doc.id}
+              id={doc.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -115,6 +97,7 @@ const OurTeam = () => {
                   src={doc.image} 
                   alt={doc.name} 
                   className="w-full h-full object-cover object-top"
+                  style={{ objectPosition: "80% center" }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent lg:hidden flex flex-col justify-end p-8">
                   <h2 className="text-3xl font-bold text-white mb-2">{doc.name}</h2>
@@ -185,10 +168,11 @@ const OurTeam = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {staff.map((member, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {staff.map((member) => (
               <motion.div 
-                key={idx}
+                key={member.id}
+                id={member.id}
                 whileHover={{ y: -10 }}
                 className="bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 rounded-3xl overflow-hidden hover:shadow-xl dark:hover:bg-white/[0.05] transition-all duration-300 group"
               >
@@ -196,6 +180,7 @@ const OurTeam = () => {
                   <img 
                     src={member.image} 
                     alt={member.name}
+                    style={{ objectPosition: member.imagePosition }}
                     className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -203,6 +188,7 @@ const OurTeam = () => {
                 <div className="p-6 text-center">
                   <h3 className="text-xl font-bold text-myblack dark:text-lightbg mb-1 transition-colors">{member.name}</h3>
                   <p className="text-lightblue font-medium text-sm">{member.role}</p>
+                  {member.bio && <p className="text-sm text-mydark leading-relaxed mt-4">{member.bio}</p>}
                 </div>
               </motion.div>
             ))}
