@@ -626,7 +626,7 @@ const serviceCategories = [
       },
       {
         name: "Surgical Exposure Teeth for Braces",
-        href: "/services/surgical-exposure-teeth-for-braces",
+        href: "/services/surgical-exposure-of-teeth",
         icon: (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -1091,7 +1091,6 @@ const Header = () => {
 
   return (
     <header className="clinic-header">
-      <a className="clinic-skip" href="#main-content">Skip to content</a>
       <div className="clinic-container clinic-header-inner">
         <Link to="/" className="clinic-logo" onClick={closeMenus}>
           <img src="/logo.png" alt="Highland Hills Dental Centre — home" width="600" height="160" />

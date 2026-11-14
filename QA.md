@@ -22,3 +22,19 @@ The approved design is the permanent React Router `/` route. It is not dependent
 - Browser checks were manual Chrome viewport checks, not real-device or cross-browser certification. No automated full-page overflow audit was performed.
 - Ratings/reviews are a static snapshot. Profile images and web fonts require their external hosts.
 - Pushing Git source does not by itself establish a new hosted client-preview URL. Existing host integrations may deploy independently.
+
+## General Dentistry styling follow-up
+
+- `/general-dentistry` now shares homepage typography, palette, service-card styling, and appointment actions.
+- All seven inline custom SVGs match the original SHA-256 baseline exactly. Existing service descriptions and destinations are preserved.
+- Production build, scoped GeneralServices ESLint, and whitespace checks pass.
+- Desktop hero, service grid, and bottom appointment panel visually checked. Chrome responsive 375px preview checked for stacked hero image, paragraph wrapping, and appointment-button fit. The appointment action reaches `/#contact`.
+
+## Dental exam and cleaning follow-up
+
+- Updated hero, benefit cards, and booking panel to the homepage UI. Reused the supplied treatment photo with responsive image variants.
+- Original cleaning timeline classes and every custom SVG match the source baseline. Alternating cards, numbers, central nodes/line, step text, and Poppins step typography are preserved.
+- Scroll reveal and progress line support reduced-motion preference; steps remain immediately visible with reduced motion.
+- Desktop hero and cleaning timeline visually checked, including the second alternating step after scrolling. Build and scoped lint pass.
+
+Exam-page refinements: breadcrumb now reads Dental Exam & Cleaning; hero icon removed explicitly at the user’s request; uploaded examination photo added with responsive variants; exam-benefit cards use a pointer cursor; bottom actions now read Request an Appointment and Call (519) 578-9826. Cleaning-step UI is unchanged. Build and scoped lint pass.

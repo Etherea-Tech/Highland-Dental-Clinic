@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 import { teamMembers } from "../teamMembers";
 
@@ -18,7 +19,7 @@ const TeamSection = () => (
               <p className="clinic-team-specialty">{member.specialty}</p>
               <h3>{member.name}</h3><p className="clinic-team-role">{member.role}</p>
               {member.bio && <p className="clinic-team-bio">{member.bio}</p>}
-              <Link className="clinic-team-more" to={`/team#${member.id}`} aria-label={`Know more about ${member.name}`}>Know More <span aria-hidden="true">&gt;</span></Link>
+              <Link className="clinic-team-more" to={`/team#${member.id}`} aria-label={`Know more about ${member.name}`}>Know More <ArrowRight size={16} aria-hidden="true" /></Link>
             </div>
           </article>
         ))}

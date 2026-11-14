@@ -59,8 +59,6 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 .clinic-mobile-category { padding: 8px 0; }
 .clinic-mobile-category p { font-size: 11px; font-weight: 700; color: var(--clinic-teal); margin-bottom: 8px; }
 .clinic-mobile-category a { display: flex; gap: 10px; align-items: center; font-size: 13px; padding: 7px 0; }
-.clinic-skip { position: absolute; top: -100px; left: 16px; padding: 12px 18px; background: white; z-index: 100; color: var(--clinic-teal); }
-.clinic-skip:focus { top: 8px; }
 .clinic-hero { position: relative; background: linear-gradient(130deg, white 45%, #f6fafb); padding: 50px 0 78px; overflow: hidden; }
 .clinic-hero::before { content: ''; position: absolute; width: 420px; height: 420px; right: -120px; top: 10%; border-radius: 50%; background: var(--clinic-pale); filter: blur(45px); opacity: .65; }
 .clinic-hero-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
@@ -333,4 +331,59 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
   .clinic-mobile-actions { gap: 8px; padding-inline: 12px; }
   .clinic-mobile-actions a { gap: 5px; font-size: 11px; }
   .clinic-contact-hours dl > div { flex-wrap: wrap; gap: 2px 10px; }
+}
+
+.clinic-team-more svg, .clinic-review-more svg { flex-shrink: 0; transition: transform .2s; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .clinic-team-more:hover svg, .clinic-review-more:hover svg { transform: translateX(4px); }
+}
+
+/* General dentistry shares the homepage typography, cards, and colour palette. */
+.clinic-general { font-family: Inter, sans-serif; color: var(--clinic-body); }
+.clinic-breadcrumbs { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 40px; color: var(--clinic-body); font-size: 12px; line-height: 1.6; }
+.clinic-breadcrumbs a:hover { color: var(--clinic-teal); text-decoration: underline; }
+.clinic-breadcrumbs [aria-current] { color: var(--clinic-slate); font-weight: 650; }
+.clinic-general-hero { padding-top: 28px; padding-bottom: 65px; }
+.clinic-general-hero .clinic-hero-description { max-width: 540px; }
+.clinic-general-photo { overflow: hidden; border: 1px solid var(--clinic-border); border-radius: 25px; box-shadow: var(--clinic-shadow); aspect-ratio: 4 / 3; background: var(--clinic-pale); }
+.clinic-general-photo img { width: 100%; height: 100%; object-fit: cover; }
+.clinic-general .clinic-service-icon svg { color: var(--clinic-teal); }
+.clinic-general .clinic-service-card:hover .clinic-service-icon svg { color: white; }
+.clinic-general-more { gap: 8px; min-height: 44px; text-decoration: none; }
+.clinic-general-more:hover { text-decoration: none; }
+.clinic-general-more svg { flex-shrink: 0; transition: transform .2s; }
+.clinic-general-booking { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; padding: 42px; border: 1px solid var(--clinic-border); border-radius: 24px; background: var(--clinic-pale); }
+.clinic-general-booking > div > p:last-child { max-width: 560px; margin-top: 16px; font-size: 15px; line-height: 1.7; }
+.clinic-general-booking-actions { display: flex; gap: 12px; align-items: stretch; }
+.clinic-general-phone { display: inline-flex; justify-content: center; gap: 8px; align-items: center; min-height: 46px; padding: 16px 20px; border: 1px solid var(--clinic-teal); border-radius: 12px; font-size: 14px; font-weight: 650; color: var(--clinic-teal); white-space: nowrap; }
+.clinic-general-phone:hover { background: white; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .clinic-general-more:hover svg { transform: translateX(4px); }
+}
+@media (max-width: 1099px) {
+  .clinic-general-booking { grid-template-columns: 1fr; gap: 24px; }
+  .clinic-general-booking-actions { justify-content: flex-start; }
+}
+@media (max-width: 899px) {
+  .clinic-general-photo { aspect-ratio: 16 / 9; }
+}
+@media (max-width: 599px) {
+  .clinic-general-hero { padding-top: 24px; padding-bottom: 45px; }
+  .clinic-breadcrumbs { font-size: 11px; gap: 8px; margin-bottom: 30px; }
+  .clinic-general-photo { border-radius: 20px; }
+  .clinic-general-booking { padding: 26px 22px; border-radius: 20px; }
+  .clinic-general-booking-actions { flex-direction: column; align-items: stretch; }
+  .clinic-general-booking-actions .clinic-button { width: 100%; font-size: 13px; }
+  .clinic-general-phone { justify-content: center; }
+}
+
+/* Exam page surfaces follow the homepage; the cleaning-step layout stays intact. */
+.clinic-exam-page .clinic-hero h1 { font-size: clamp(36px, 4vw, 54px); }
+.clinic-exam-benefit { cursor: pointer; }
+.clinic-exam-benefit p { margin-bottom: 0; }
+.clinic-exam-benefit:hover .clinic-service-icon { background: var(--clinic-pale); }
+.clinic-cleaning-timeline, .clinic-cleaning-timeline h3 { font-family: Poppins, sans-serif; }
+.clinic-exam-booking { padding-top: 0; }
+@media (max-width: 599px) {
+  .clinic-exam-page .clinic-hero h1 { font-size: clamp(32px, 8.5vw, 42px); }
 }

@@ -2,7 +2,7 @@ import GoogleRating from "./GoogleRating";
 import { clinic } from "../clinicDetails";
 import { FcGoogle } from "react-icons/fc";
 import { FaQuoteLeft } from "react-icons/fa";
-import { Star } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 
 const Testimonials = () => {
   // Verified on Google Maps, sorted Newest, on November 13, 2026.
@@ -46,7 +46,7 @@ const Testimonials = () => {
                 {[...Array(testimonial.rating)].map((_, i) => <Star key={i} size={17} fill="currentColor" aria-hidden="true" />)}
               </div>
               <blockquote>“{testimonial.text}”</blockquote>
-              <a className="clinic-review-more" href={clinic.mapUrl} target="_blank" rel="noreferrer" aria-label={`Read more of ${testimonial.name}’s review on Google Maps`}>Read More <span aria-hidden="true">&gt;</span></a>
+              <a className="clinic-review-more" href={clinic.mapUrl} target="_blank" rel="noreferrer" aria-label={`Read more of ${testimonial.name}’s review on Google Maps`}>Read More <ArrowRight size={16} aria-hidden="true" /></a>
               <div className="clinic-review-author">
                 <div className="clinic-review-avatar" aria-hidden="true">{testimonial.image ? <img src={testimonial.image} alt="" width="43" height="43" loading="lazy" referrerPolicy="no-referrer" /> : testimonial.name.split(" ").map((part) => part[0]).join("")}</div>
                 <div><h3>{testimonial.name}</h3><span><FcGoogle size={13} aria-hidden="true" />Google Review</span></div>
@@ -54,7 +54,7 @@ const Testimonials = () => {
             </article>
           ))}
         </div>
-        <div className="clinic-section-action"><a className="clinic-button clinic-button-slate" href={clinic.mapUrl} target="_blank" rel="noreferrer">Read Google Reviews <span aria-hidden="true">↗</span></a></div>
+        <div className="clinic-section-action"><a className="clinic-button clinic-button-slate" href={clinic.mapUrl} target="_blank" rel="noreferrer">Read Google Reviews <ArrowRight size={18} aria-hidden="true" /></a></div>
       </div>
     </section>
   );

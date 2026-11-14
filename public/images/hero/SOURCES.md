@@ -25,3 +25,5 @@ Retrieved November 13, 2026. These are licensed stock/illustrative images, not p
 Pexels licence: https://www.pexels.com/license/ — free use and modification; attribution not required. The images remain copyrighted and are licensed for reuse; they are not public-domain images. Do not imply endorsement by people pictured, redistribute as stock, or resell unaltered copies.
 
 Images are downloaded locally for reliable loading. Pexels delivery URLs request compressed web-sized JPEGs; the X-ray is the original JPEG. No stock image is presented as an actual Highland Hills patient or staff member.
+
+Dental Exam and Cleaning hero: user-supplied `ozkan-guner-oJFXtJPV9Pg-unsplash.jpg`, copied as `images/clinic/dental-exam-cleaning.jpg`; responsive versions are in `images/responsive`.

@@ -2,7 +2,7 @@
 
 ## Collaboration
 - Work step by step. Discuss a new phase before implementing it; complete already approved changes without repeated permission requests.
-- Current approved phase: finalize and test the approved responsive homepage and push its source to the existing GitHub remote. Preserve the personally designed icons and testimonial card styling.
+- Current approved phase: align the Dental Exam and Cleaning page with the approved UI. Preserve the Cleaning Process step layout, icons, and content; scroll reveals may be refined. The homepage has already been pushed to GitHub; subsequent review edits remain local unless a push is requested.
 - Keep this project local unless the user explicitly requests publication.
 - Preserve unrelated user changes, including existing package-lock.json changes.
 
