@@ -387,3 +387,55 @@ html { scroll-behavior: smooth; scroll-padding-top: 110px; }
 @media (max-width: 599px) {
   .clinic-exam-page .clinic-hero h1 { font-size: clamp(32px, 8.5vw, 42px); }
 }
+
+/* Emergency detail page uses the established service-page structure. */
+.clinic-emergency-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: stretch; }
+.clinic-emergency-hero-actions .clinic-general-phone { font-size: 13px; }
+.clinic-emergency-hours { font-size: 12px; line-height: 1.7; margin-top: 16px; max-width: 510px; }
+.clinic-emergency-care-icon { color: var(--clinic-teal); }
+.clinic-emergency-services { display: grid; grid-template-columns: 1fr 1fr; gap: 42px; align-items: start; padding: 42px; border-radius: 24px; background: var(--clinic-dark); color: #d1dbe5; }
+.clinic-emergency-services h2 { color: white; }
+.clinic-emergency-services h2 span { color: #a5d8e4; }
+.clinic-emergency-services .clinic-eyebrow { color: #a5d8e4; }
+.clinic-emergency-services > div > p:last-child { max-width: 760px; margin-top: 20px; font-size: 15px; line-height: 1.8; }
+.clinic-emergency-services ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 18px; }
+.clinic-emergency-services li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.7; }
+.clinic-emergency-services li > svg { flex-shrink: 0; margin-top: 2px; color: #a5d8e4; }
+@media (max-width: 899px) {
+  .clinic-emergency-services { grid-template-columns: 1fr; gap: 28px; padding: 32px; }
+}
+@media (max-width: 599px) {
+  .clinic-emergency-hero-actions { flex-direction: column; }
+  .clinic-emergency-hero-actions > a { width: 100%; }
+  .clinic-emergency-services { padding: 26px 22px; border-radius: 20px; }
+}
+
+/* Shared service detail presentation, matching the approved exam and emergency pages. */
+.clinic-service-detail { background: white; }
+.clinic-service-eyebrow > span { display: inline-flex; align-items: center; justify-content: center; }
+.clinic-service-eyebrow > span > svg { width: 22px; height: 22px; }
+.clinic-service-content { padding-bottom: 85px; }
+.clinic-service-section { margin-bottom: 80px; }
+.clinic-service-section-heading { margin-bottom: 34px; max-width: 800px; text-align: left; }
+.clinic-service-content h2 { color: var(--clinic-slate); font-family: 'Plus Jakarta Sans', sans-serif; font-size: clamp(27px, 3vw, 38px); font-weight: 800; line-height: 1.25; letter-spacing: -.035em; }
+.clinic-service-content h3 { color: var(--clinic-slate); }
+.clinic-service-content p { color: var(--clinic-body); font-weight: 400; }
+.clinic-service-section-heading p { margin-top: 16px; font-size: 16px; line-height: 1.8; }
+.clinic-service-intro { padding: 35px; margin-bottom: 80px; border: 1px solid var(--clinic-border); background: #f6fafa; border-radius: 24px; }
+.clinic-service-intro p { margin-top: 16px; font-size: 16px; line-height: 1.8; }
+.clinic-service-detail-grid .clinic-service-card { min-width: 0; }
+.clinic-service-detail-grid .clinic-service-card h3 { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 19px; font-weight: 750; line-height: 1.4; }
+.clinic-service-detail-grid .clinic-service-card p { font-size: 14px; line-height: 1.8; }
+.clinic-service-detail .clinic-service-card:hover .clinic-service-icon svg { color: var(--clinic-teal); }
+.clinic-service-booking h2 { font-size: clamp(25px, 2.5vw, 32px); }
+.clinic-service-booking p { margin-top: 16px; font-size: 15px; line-height: 1.8; }
+.clinic-service-booking .clinic-emergency-hero-actions { flex-wrap: nowrap; }
+.clinic-service-booking .clinic-button { white-space: nowrap; }
+@media (max-width: 1099px) {
+  .clinic-service-booking .clinic-emergency-hero-actions { flex-wrap: wrap; }
+}
+@media (max-width: 599px) {
+  .clinic-service-section, .clinic-service-intro { margin-bottom: 55px; }
+  .clinic-service-intro { padding: 25px; }
+  .clinic-service-content { padding-bottom: 55px; }
+}

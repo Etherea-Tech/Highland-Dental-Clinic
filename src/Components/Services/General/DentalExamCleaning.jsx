@@ -188,7 +188,10 @@ const DentalExamCleaning = () => {
               <p className="clinic-eyebrow">Preventive care</p>
               <h1 id="exam-title">Dental Examination <span>&amp; Cleaning</span></h1>
               <p className="clinic-hero-description">Welcome to Highland Hills Dental Centre! We are committed to providing comprehensive dental care to ensure your oral health and beautiful smile. Regular exams and cleanings are the heart of our preventive approach.</p>
-              <Link to="/#contact" className="clinic-button clinic-button-large">Request an Appointment <ArrowRight size={18} aria-hidden="true" /></Link>
+              <div className="clinic-emergency-hero-actions">
+                <a href={clinic.phoneHref} className="clinic-button clinic-button-large"><Phone size={18} aria-hidden="true" />Call {clinic.phone}</a>
+                <Link to="/#contact" className="clinic-general-phone">Request an Appointment <ArrowRight size={18} aria-hidden="true" /></Link>
+              </div>
             </div>
             <div className="clinic-general-photo">
               <img src="/images/responsive/dental-exam-cleaning-1440.jpg" srcSet="/images/responsive/dental-exam-cleaning-720.jpg 720w, /images/responsive/dental-exam-cleaning-1440.jpg 1440w" sizes="(max-width: 599px) calc(100vw - 40px), (max-width: 899px) calc(100vw - 64px), 583px" alt="A dental examination using a mirror and probe" width="1440" height="2160" fetchPriority="high" />

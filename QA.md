@@ -38,3 +38,18 @@ The approved design is the permanent React Router `/` route. It is not dependent
 - Desktop hero and cleaning timeline visually checked, including the second alternating step after scrolling. Build and scoped lint pass.
 
 Exam-page refinements: breadcrumb now reads Dental Exam & Cleaning; hero icon removed explicitly at the user’s request; uploaded examination photo added with responsive variants; exam-benefit cards use a pointer cursor; bottom actions now read Request an Appointment and Call (519) 578-9826. Cleaning-step UI is unchanged. Build and scoped lint pass.
+
+## Emergency Dental Care follow-up
+
+- Updated `/services/emergency-dental-care` to the same breadcrumb, typography, hero, cards, and outlined-call/appointment actions as the approved service pages.
+- Preserved symptom descriptions, step content/icons and alternating step layout. Timeline colours now match teal branding; reveal/progress respect reduced motion.
+- Replaced the old 555 placeholder phone with shared clinic contact details in both call actions. The hero call action is primary and links use `tel:+15195789826`.
+- Desktop hero and services/contact panels visually reviewed. Mobile-specific stacking styles are included; a fresh phone viewport review was interrupted by browser focus changes.
+- Production build, scoped ESLint, and whitespace checks pass. Changes are local for review.
+
+## All service detail pages — November 13, 2026
+- Applied the approved hero/breadcrumb, slate/teal typography, benefit-card and booking-panel structure to the remaining 25 service detail pages. Exam & Cleaning and Emergency Care retain their approved custom layouts.
+- Shared ServicePageParts.jsx supplies the clinic phone and appointment links. Category breadcrumbs resolve to existing category anchors. Existing uploaded dental photography is used with responsive image sources.
+- Original inline SVG strings and clinical description arrays were compared against pre-edit snapshots for all 25 pages and preserved. Existing alternating process layouts remain intact; reduced-motion preferences bypass reveal animations.
+- All 27 detail components passed a server render smoke check (one H1, actual clinic phone link, no placeholder number). Production build and scoped service-page ESLint passed.
+- Extractions desktop hero and iPhone SE 375px hero were visually checked in Chrome. Other pages share the same responsive components; this was not a full physical-device/browser matrix.

@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Phone, Activity, Search, ShieldCheck, Stethoscope, Smile, AlignHorizontalSpaceAround, Settings, Shield, Star, Crown } from "lucide-react";
+import { ServiceHero, ServiceBooking } from "../ServicePageParts";
+import { useRef } from "react";
+import { motion as Motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
+import { Activity, Search, ShieldCheck, Stethoscope, Smile, AlignHorizontalSpaceAround, Settings, Shield, Star, Crown } from "lucide-react";
 
 const Braces = () => {
+  const reduceMotion = useReducedMotion();
   const timelineRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: timelineRef,
@@ -76,92 +77,36 @@ const Braces = () => {
   ];
 
   return (
-    <div className="bg-lightbg dark:bg-myblack min-h-screen pt-32 pb-24 font-poppins transition-colors duration-300 relative overflow-hidden">
-      
-      {/* Minimal Decor */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-lightblue/5 dark:bg-lightblue/10 rounded-full blur-[150px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
-
-      <div className="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
-        
-        {/* Back Link */}
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="mb-12"
-        >
-          <Link 
-            to="/services" 
-            className="inline-flex items-center gap-2 text-mydark dark:text-lightbg/60 hover:text-lightblue dark:hover:text-lightblue font-medium transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Services
-          </Link>
-        </motion.div>
-
-        {/* Hero Section */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20 mb-20">
-          <div className="lg:w-1/2 text-center lg:text-left">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-lightblue/10 text-lightblue mb-6"
-            >
-              <Smile className="w-8 h-8" />
-            </motion.div>
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-myblack dark:text-lightbg mb-6 leading-tight transition-colors"
-            >
-              Orthodontic <span className="text-transparent bg-clip-text bg-gradient-to-r from-lightblue to-blue-400">Braces</span>
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-mydark dark:text-lightbg/70 font-light leading-relaxed transition-colors"
-            >
-              We are dedicated to helping you achieve a straighter, healthier smile through our comprehensive orthodontic services. Our experienced team offers a variety of braces options to address your unique needs and provide you with a smile you can be proud of.
-            </motion.p>
-          </div>
-
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
-            className="lg:w-1/2 w-full relative"
-          >
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/3] group border border-gray-100 dark:border-white/10">
-              <img 
-                src="https://images.unsplash.com/photo-1606265752439-1f18756aa5fc?q=80&w=1200&auto=format&fit=crop" 
-                alt="Orthodontic Braces" 
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-lightblue/20 to-transparent mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
-            <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-lightblue/20 dark:bg-lightblue/10 rounded-full blur-2xl pointer-events-none"></div>
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-400/20 dark:bg-blue-400/10 rounded-full blur-2xl pointer-events-none"></div>
-          </motion.div>
-        </div>
-
+    <div className="clinic-general clinic-exam-page clinic-service-detail">
+      <ServiceHero
+        title={<>Orthodontic <span>Braces</span></>}
+        breadcrumb="Orthodontic Braces"
+        category="Orthodontics"
+        categoryHref="/services#orthodontics"
+        description={<>We are dedicated to helping you achieve a straighter, healthier smile through our comprehensive orthodontic services. Our experienced team offers a variety of braces options to address your unique needs and provide you with a smile you can be proud of.</>}
+        image="/images/responsive/dental-care-1440.jpg"
+        imageAlt="Dental professional providing treatment"
+        icon={<Smile className="w-8 h-8" />}
+      />
+      <div className="clinic-container clinic-service-content">
         {/* Section 1: Understanding Braces */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <Motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24"
+          className="clinic-service-section"
         >
-          <div className="mb-10 text-center md:text-left">
+          <div className="clinic-service-section-heading">
             <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Understanding Braces</h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
               Braces are orthodontic appliances used to correct misaligned teeth and bite issues. They work by gently applying continuous pressure to move teeth into their desired positions over time. Braces are a versatile and effective solution for a wide range of orthodontic concerns:
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+          <div className="clinic-services-grid clinic-service-detail-grid">
             {understandingBraces.map((item, idx) => (
-              <div key={idx} className="bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-8 rounded-3xl hover:shadow-xl dark:hover:bg-white/[0.05] transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 text-lightblue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div key={idx} className="clinic-service-card clinic-exam-benefit group">
+                <div className="clinic-service-icon">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold text-myblack dark:text-lightbg mb-3">{item.title}</h3>
@@ -169,26 +114,26 @@ const Braces = () => {
               </div>
             ))}
           </div>
-        </motion.div>
+        </Motion.div>
 
         {/* Section 2: Options for Every Smile */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <Motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-24"
+          className="clinic-service-section"
         >
-          <div className="mb-10 text-center md:text-left">
+          <div className="clinic-service-section-heading">
             <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Options for Every Smile</h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-3xl font-light text-lg transition-colors mb-8">
               We offer multiple state-of-the-art orthodontic solutions tailored to fit your lifestyle, cosmetic preferences, and treatment needs.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+          <div className="clinic-services-grid clinic-service-detail-grid">
             {bracesOptions.map((item, idx) => (
-              <div key={idx} className="bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-8 rounded-3xl hover:shadow-xl dark:hover:bg-white/[0.05] transition-all duration-300 group">
-                <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 text-lightblue flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div key={idx} className="clinic-service-card clinic-exam-benefit group">
+                <div className="clinic-service-icon">
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold text-myblack dark:text-lightbg mb-3">{item.title}</h3>
@@ -196,36 +141,36 @@ const Braces = () => {
               </div>
             ))}
           </div>
-        </motion.div>
+        </Motion.div>
 
         {/* Section 3: The Process (Timeline) */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
+        <Motion.div
+          initial={reduceMotion ? false : { opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-20"
+          className="clinic-service-section"
         >
-          <div className="mb-10 text-center md:text-left">
+          <div className="clinic-service-section-heading">
             <h2 className="text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">The Orthodontic Journey</h2>
             <p className="text-mydark dark:text-lightbg/70 max-w-2xl font-light text-lg transition-colors">
               Our experienced team will guide you through every step of your orthodontic journey, ensuring optimal comfort and breathtaking results.
             </p>
           </div>
           
-          <div ref={timelineRef} className="relative max-w-5xl mx-auto mt-16 pb-10">
+          <div ref={timelineRef} className="clinic-cleaning-timeline relative max-w-5xl mx-auto mt-16 pb-10">
             {/* Center Line Track */}
             <div className="hidden md:block absolute left-1/2 top-4 bottom-4 w-1 bg-lightblue/10 dark:bg-white/5 -translate-x-1/2 rounded-full z-0"></div>
             {/* Center Line Fill (Animated) */}
-            <motion.div 
-              style={{ height: lineHeight }}
+            <Motion.div
+              style={{ height: reduceMotion ? "100%" : lineHeight }}
               className="hidden md:block absolute left-1/2 top-4 w-1 bg-gradient-to-b from-lightblue via-lightblue/80 to-transparent -translate-x-1/2 rounded-full z-0 origin-top"
-            ></motion.div>
+            ></Motion.div>
 
             <div className="space-y-12 md:space-y-24 relative z-10">
               {processSteps.map((item, idx) => (
-                <motion.div 
+                <Motion.div
                   key={idx} 
-                  initial={{ opacity: 0, y: 50 }}
+                  initial={reduceMotion ? false : { opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6 }}
@@ -254,40 +199,15 @@ const Braces = () => {
 
                   {/* Empty side for layout balance */}
                   <div className="hidden md:block w-1/2"></div>
-                </motion.div>
+                </Motion.div>
               ))}
             </div>
           </div>
-        </motion.div>
+        </Motion.div>
 
-        {/* Minimalist CTA Footer */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="bg-lightblue/10 dark:bg-lightblue/5 rounded-3xl p-10 md:p-14 text-center max-w-4xl mx-auto mb-16"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-myblack dark:text-lightbg mb-4 transition-colors">Expert Guidance for a Flawless Smile</h2>
-          <p className="text-mydark dark:text-lightbg/80 mb-6 max-w-2xl mx-auto font-light leading-relaxed transition-colors">
-            Our experienced team will guide you through the entire orthodontic process, ensuring your safety, comfort, and optimal results. We take into consideration your dental health and personal goals to recommend the best path to your perfect smile.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-            <a 
-              href="/contact"
-              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 bg-lightblue text-myblack px-8 py-4 rounded-full font-bold hover:bg-white transition-all shadow-[0_0_20px_rgba(76,156,181,0.3)] hover:-translate-y-1"
-            >
-              <Calendar className="w-5 h-5" />
-              Book a Consultation
-            </a>
-            <a 
-              href="tel:+1234567890"
-              className="w-full sm:w-auto inline-flex justify-center items-center gap-2 border border-lightblue/30 dark:border-white/20 bg-transparent text-myblack dark:text-lightbg px-8 py-4 rounded-full font-bold hover:bg-lightblue/20 dark:hover:bg-white/10 transition-all hover:-translate-y-1"
-            >
-              <Phone className="w-5 h-5" />
-              Call Clinic
-            </a>
-          </div>
-        </motion.div>
+        <ServiceBooking title={<>Expert Guidance for a Flawless Smile</>}>
+          <p>Our experienced team will guide you through the entire orthodontic process, ensuring your safety, comfort, and optimal results. We take into consideration your dental health and personal goals to recommend the best path to your perfect smile.</p>
+        </ServiceBooking>
 
       </div>
     </div>
